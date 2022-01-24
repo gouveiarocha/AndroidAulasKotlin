@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.appaulaskotlin">
+    package="com.example.androidaulaskotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name=".ActsEstudos.LoginMVP.LoginMVP"></activity>
-        <activity android:name=".ActsEstudos.MVVM.MVVM" />
-        <activity android:name=".ActsEstudos.APIRetrofit.APIRetrofit" />
-        <activity android:name=".ActsApps.AppJokenpo" />
-        <activity android:name=".ActsPrincipais.MainActivity">
+        <activity android:name="com.example.androidaulaskotlin.ActsEstudos.LoginMVP.LoginMVP"></activity>
+        <activity android:name="com.example.androidaulaskotlin.ActsEstudos.MVVM.MVVM" />
+        <activity android:name="com.example.androidaulaskotlin.ActsEstudos.APIRetrofit.APIRetrofit" />
+        <activity android:name="com.example.androidaulaskotlin.ActsApps.AppJokenpo" />
+        <activity android:name="com.example.androidaulaskotlin.ActsPrincipais.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
