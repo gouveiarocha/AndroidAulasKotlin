@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.TesteUnitario.Exercicio
+package com.example.appaulaskotlin.ActsEstudos.TesteUnitario.Exercicio
 
 fun main() {
 

@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.APIRetrofit
+package com.example.appaulaskotlin.ActsEstudos.APIRetrofit
 
 import retrofit2.Call
 import retrofit2.http.GET

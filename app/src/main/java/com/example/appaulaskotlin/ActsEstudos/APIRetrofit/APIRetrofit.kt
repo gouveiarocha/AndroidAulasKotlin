@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.APIRetrofit
+package com.example.appaulaskotlin.ActsEstudos.APIRetrofit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.LoginMVP
+package com.example.appaulaskotlin.ActsEstudos.LoginMVP
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

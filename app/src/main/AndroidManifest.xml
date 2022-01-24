@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name=".ActsAulas.LoginMVP.LoginMVP"></activity>
-        <activity android:name=".ActsAulas.MVVM.MVVM" />
-        <activity android:name=".ActsAulas.APIRetrofit.APIRetrofit" />
+        <activity android:name=".ActsEstudos.LoginMVP.LoginMVP"></activity>
+        <activity android:name=".ActsEstudos.MVVM.MVVM" />
+        <activity android:name=".ActsEstudos.APIRetrofit.APIRetrofit" />
         <activity android:name=".ActsApps.AppJokenpo" />
         <activity android:name=".ActsPrincipais.MainActivity">
             <intent-filter>

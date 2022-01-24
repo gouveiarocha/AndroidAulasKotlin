@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.Kotlin.MyCodes.KOAN
+package com.example.appaulaskotlin.ActsEstudos.Kotlin.MyCodes.KOAN
 
 fun main() {
 

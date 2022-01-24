@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.Kotlin.Secao26_MaisSobreClasses
+package com.example.appaulaskotlin.ActsEstudos.Kotlin.Secao26_MaisSobreClasses
 
 /**
  * SealedClass ou Classe selada.

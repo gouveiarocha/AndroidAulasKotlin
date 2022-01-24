@@ -1,6 +1,6 @@
 package com.example.appaulaskotlin.TesteUnitario
 
-import com.example.appaulaskotlin.ActsAulas.TesteUnitario.Exercicio.portaria
+import com.example.appaulaskotlin.ActsEstudos.TesteUnitario.Exercicio.portaria
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

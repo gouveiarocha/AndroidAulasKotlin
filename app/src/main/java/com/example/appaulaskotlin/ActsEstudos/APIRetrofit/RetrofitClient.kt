@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.APIRetrofit
+package com.example.appaulaskotlin.ActsEstudos.APIRetrofit
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.MVVM
+package com.example.appaulaskotlin.ActsEstudos.MVVM
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

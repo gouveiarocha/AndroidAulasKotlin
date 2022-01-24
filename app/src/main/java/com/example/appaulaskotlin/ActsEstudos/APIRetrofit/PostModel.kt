@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.APIRetrofit
+package com.example.appaulaskotlin.ActsEstudos.APIRetrofit
 
 import com.google.gson.annotations.SerializedName
 

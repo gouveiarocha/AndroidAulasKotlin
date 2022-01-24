@@ -1,4 +1,4 @@
-package com.example.appaulaskotlin.ActsAulas.Kotlin.Secao26_MaisSobreClasses
+package com.example.appaulaskotlin.ActsEstudos.Kotlin.Secao26_MaisSobreClasses
 
 /**
  * NestedClass do Kotlin funciona como a InnerClass do java. Observar que, caso seja uma inner class
