@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val changePage = Intent(this, MVVM::class.java)
-        startActivity(changePage)
+        startActivity(Intent(this, MVVM::class.java))
 
     }
 }

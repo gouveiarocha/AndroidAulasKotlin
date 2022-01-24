@@ -5,6 +5,11 @@ plugins {
 }
 
 android {
+
+    packagingOptions {
+        pickFirst "**"
+    }
+
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
@@ -16,6 +21,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
