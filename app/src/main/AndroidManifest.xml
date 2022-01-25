@@ -14,7 +14,7 @@
         <activity android:name="com.example.androidaulaskotlin.ActsEstudos.LoginMVP.LoginMVP"></activity>
         <activity android:name="com.example.androidaulaskotlin.ActsEstudos.MVVM.MVVM" />
         <activity android:name="com.example.androidaulaskotlin.ActsEstudos.APIRetrofit.APIRetrofit" />
-        <activity android:name="com.example.androidaulaskotlin.ActsApps.AppJokenpo" />
+        <activity android:name="com.example.androidaulaskotlin.ActsApps.Jokenpo.AppJokenpo" />
         <activity android:name="com.example.androidaulaskotlin.ActsPrincipais.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

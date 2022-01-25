@@ -1,4 +1,4 @@
-package com.example.androidaulaskotlin.ActsApps
+package com.example.androidaulaskotlin.ActsApps.Jokenpo
 
 import android.os.Bundle
 import android.view.View
