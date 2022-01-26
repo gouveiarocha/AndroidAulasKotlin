@@ -1,11 +1,11 @@
 package com.example.androidaulaskotlin.ActsApps.PortariaOO.control
 
-import com.example.androidaulaskotlin.ActsApps.PortariaOO.business.InvitationBusiness
-import com.example.androidaulaskotlin.ActsApps.PortariaOO.entity.Invitation
+import com.example.androidaulaskotlin.ActsApps.PortariaOO.business.GuestBusiness
+import com.example.androidaulaskotlin.ActsApps.PortariaOO.entity.Guest
 
 class PortariaPrincipal {
 
-    private val conviteBusiness = InvitationBusiness()
+    private val guestBusiness = GuestBusiness()
 
     init {
         println("Portaria Inicializada...")
@@ -14,22 +14,23 @@ class PortariaPrincipal {
 
     private fun controleAcesso(): String {
 
+        val guest = Guest()
+
         //Idade...
-        val idade = PortariaConsole.readInt("Informar idade: ")
-        if (idade < 18) {
+        guest.age = PortariaConsole.readInt("Informar idade: ")
+        if (!guestBusiness.isOfAge(guest.age)) {
             return "Acesso Negado. Menores de idade não são permitidos..."
         }
 
         //Tipo Convite...
-        val invitationType = PortariaConsole.readString("Informe o tipo do convite: ")
-        if (!conviteBusiness.isTypeValid(invitationType)) {
+        guest.invitationType = PortariaConsole.readString("Informe o tipo do convite: ")
+        if (!guestBusiness.isTypeValid(guest.invitationType)) {
             return "Acesso Negado. Tipo de convite inválido..."
         }
 
         //Código Convite...
-        val invitationCode = PortariaConsole.readString("Informe o código do convite: ")
-        val invitation = Invitation(invitationType, invitationCode)
-        if (!conviteBusiness.isCodeValid(invitation)) {
+        guest.invitationCode = PortariaConsole.readString("Informe o código do convite: ")
+        if (!guestBusiness.isCodeValid(guest)) {
             return "Acesso Negado. Código do convite inválido..."
         }
 
