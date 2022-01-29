@@ -11,13 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name=".Paralelos.ActForResult.SecondScreen"></activity>
-        <activity android:name=".Paralelos.ActForResult.FirstScreen" />
-        <activity android:name="com.example.androidaulaskotlin.Paralelos.LoginMVP.LoginMVP" />
-        <activity android:name="com.example.androidaulaskotlin.UdemyKotlin.estudos.MVVM.MVVM" />
-        <activity android:name="com.example.androidaulaskotlin.UdemyKotlin.estudos.APIRetrofit.APIRetrofit" />
-        <activity android:name=".ActsApps.Jokenpo.AppJokenpo" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".EstudosParalelos.LoginMVP.activitys.LoginMVP_HomeActvity"></activity>
+        <activity android:name=".EstudosParalelos.ActForResult.SecondScreen" />
+        <activity android:name=".EstudosParalelos.ActForResult.FirstScreen" />
+        <activity android:name=".EstudosParalelos.LoginMVP.activitys.LoginMVP_LoginActivity" />
+        <activity android:name=".UdemyKotlin.estudos.MVVM.MVVM" />
+        <activity android:name=".UdemyKotlin.estudos.APIRetrofit.APIRetrofit" />
+        <activity android:name=".AppsParalelos.Jokenpo.AppJokenpo" />
+        <activity android:name=".Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

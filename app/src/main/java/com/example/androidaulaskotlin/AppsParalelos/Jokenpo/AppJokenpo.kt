@@ -1,4 +1,4 @@
-package com.example.androidaulaskotlin.ActsApps.Jokenpo
+package com.example.androidaulaskotlin.AppsParalelos.Jokenpo
 
 import android.os.Bundle
 import android.view.View

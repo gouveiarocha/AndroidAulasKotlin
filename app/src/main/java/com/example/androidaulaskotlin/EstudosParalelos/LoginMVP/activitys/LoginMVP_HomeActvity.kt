@@ -1,16 +1,12 @@
-package com.example.androidaulaskotlin.Paralelos.LoginMVP
+package com.example.androidaulaskotlin.EstudosParalelos.LoginMVP.activitys
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidaulaskotlin.R
 
-/**
- * PENDENTE: Integrar Projeto 'LoginMVP' aqui.
- */
-
-class LoginMVP : AppCompatActivity() {
+class LoginMVP_HomeActvity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_mvp)
+        setContentView(R.layout.loginmvp_act_home)
     }
 }

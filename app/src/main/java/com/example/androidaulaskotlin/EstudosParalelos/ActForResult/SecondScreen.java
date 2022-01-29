@@ -1,4 +1,4 @@
-package com.example.androidaulaskotlin.Paralelos.ActForResult;
+package com.example.androidaulaskotlin.EstudosParalelos.ActForResult;
 
 import androidx.appcompat.app.AppCompatActivity;
 
