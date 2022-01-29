@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidaulaskotlin.ActsEstudos.MVVM.MVVM
+import com.example.androidaulaskotlin.ActsEstudos.M_ActForResult.FirstScreen
 import com.example.androidaulaskotlin.R
 
 class MainActivity : AppCompatActivity() {
@@ -11,8 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(Intent(this, MVVM::class.java))
-        //novo teste
+        startActivity(Intent(this, FirstScreen::class.java))
 
     }
 }

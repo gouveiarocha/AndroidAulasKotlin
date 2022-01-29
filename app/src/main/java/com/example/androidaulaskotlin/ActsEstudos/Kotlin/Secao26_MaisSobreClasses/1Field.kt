@@ -1,5 +1,6 @@
 package Secao26_MaisSobreClasses
 
+import java.io.Serializable
 import java.lang.Exception
 
 fun main() {
@@ -14,7 +15,7 @@ fun main() {
 
 // --------Classe Carro--------- //
 
-class Carro(val modelo: String, val maxSpeed: Int) {
+class Carro(val modelo: String, val maxSpeed: Int): Serializable {
 
     //--->propriedade privada
     var currentSpeed: Int = 0

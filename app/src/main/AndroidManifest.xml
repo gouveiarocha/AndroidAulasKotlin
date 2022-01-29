@@ -11,11 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name="com.example.androidaulaskotlin.ActsEstudos.LoginMVP.LoginMVP"></activity>
-        <activity android:name="com.example.androidaulaskotlin.ActsEstudos.MVVM.MVVM" />
-        <activity android:name="com.example.androidaulaskotlin.ActsEstudos.APIRetrofit.APIRetrofit" />
-        <activity android:name="com.example.androidaulaskotlin.ActsApps.Jokenpo.AppJokenpo" />
-        <activity android:name="com.example.androidaulaskotlin.ActsPrincipais.MainActivity">
+        <activity android:name=".ActsEstudos.M_ActForResult.SecondScreen"></activity>
+        <activity android:name=".ActsEstudos.M_ActForResult.FirstScreen" />
+        <activity android:name=".ActsEstudos.LoginMVP.LoginMVP" />
+        <activity android:name=".ActsEstudos.MVVM.MVVM" />
+        <activity android:name=".ActsEstudos.APIRetrofit.APIRetrofit" />
+        <activity android:name=".ActsApps.Jokenpo.AppJokenpo" />
+        <activity android:name=".ActsPrincipais.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
