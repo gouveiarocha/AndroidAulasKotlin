@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActsEstudos.M_ActForResult.SecondScreen">
+    tools:context=".Paralelos.ActForResult.SecondScreen">
 
     <TextView
         android:id="@+id/edt_second_screen"

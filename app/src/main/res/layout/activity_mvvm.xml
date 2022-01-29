@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActsEstudos.MVVM.MVVM">
+    tools:context=".UdemyKotlin.estudos.MVVM.MVVM">
 
     <TextView
         android:id="@+id/textWelcome"
