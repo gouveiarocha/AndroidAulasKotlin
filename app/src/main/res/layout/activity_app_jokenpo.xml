@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AppsParalelos.Jokenpo.AppJokenpo">
+    tools:context=".Paralelos.Apps.Jokenpo.AppJokenpo">
 
     <TextView
         android:id="@+id/textView"

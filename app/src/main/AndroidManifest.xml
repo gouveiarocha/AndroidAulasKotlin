@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidaulaskotlin">
+    package="com.example.gouveiarocha.estudoskotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name=".EstudosParalelos.LoginMVP.activitys.LoginMVP_HomeActvity"></activity>
-        <activity android:name=".EstudosParalelos.ActForResult.SecondScreen" />
-        <activity android:name=".EstudosParalelos.ActForResult.FirstScreen" />
-        <activity android:name=".EstudosParalelos.LoginMVP.activitys.LoginMVP_LoginActivity" />
-        <activity android:name=".UdemyKotlin.estudos.MVVM.MVVM" />
-        <activity android:name=".UdemyKotlin.estudos.APIRetrofit.APIRetrofit" />
-        <activity android:name=".AppsParalelos.Jokenpo.AppJokenpo" />
-        <activity android:name=".Main.MainActivity">
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.LoginMVP.activitys.LoginMVP_HomeActvity"></activity>
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.ActForResult.SecondScreen" />
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.ActForResult.FirstScreen" />
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.LoginMVP.activitys.LoginMVP_LoginActivity" />
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.estudos.MVVM.MVVM" />
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.estudos.APIRetrofit.APIRetrofit" />
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Apps.Jokenpo.AppJokenpo" />
+        <activity android:name="com.example.gouveiarocha.estudoskotlin.AcitivtysPrincipais.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
