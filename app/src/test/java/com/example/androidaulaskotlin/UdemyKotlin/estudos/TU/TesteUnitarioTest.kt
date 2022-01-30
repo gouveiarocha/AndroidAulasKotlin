@@ -1,4 +1,4 @@
-package com.example.androidaulaskotlin.TesteUnitario
+package com.example.androidaulaskotlin.UdemyKotlin.estudos.TU
 
 import countXO
 import org.junit.jupiter.api.*

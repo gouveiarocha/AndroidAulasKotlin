@@ -1,6 +1,6 @@
-package com.example.androidaulaskotlin.TesteUnitario
+package com.example.androidaulaskotlin.UdemyKotlin.estudos.TU
 
-import com.example.androidaulaskotlin.UdemyKotlin.estudos.TesteUnitario.Exercicio.portaria
+import com.example.androidaulaskotlin.UdemyKotlin.estudos.TU.Exercicio.portaria
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test

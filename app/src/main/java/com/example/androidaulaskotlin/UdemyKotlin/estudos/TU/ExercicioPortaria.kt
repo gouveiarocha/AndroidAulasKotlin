@@ -1,4 +1,4 @@
-package com.example.androidaulaskotlin.UdemyKotlin.estudos.TesteUnitario.Exercicio
+package com.example.androidaulaskotlin.UdemyKotlin.estudos.TU.Exercicio
 
 fun main() {
 
