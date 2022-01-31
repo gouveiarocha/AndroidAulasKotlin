@@ -3,7 +3,7 @@ package com.example.gouveiarocha.estudoskotlin.AcitivtysPrincipais
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.LoginMVP.activitys.LoginMVP_LoginActivity
+import com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.apps.GastoViagem.AppGastoViagem
 import com.example.gouveiarocha.estudoskotlin.R
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(Intent(this, LoginMVP_LoginActivity::class.java))
+        startActivity(Intent(this, AppGastoViagem::class.java))
+
 
     }
 }

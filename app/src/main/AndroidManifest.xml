@@ -11,14 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.LoginMVP.activitys.LoginMVP_HomeActvity"></activity>
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.ActForResult.SecondScreen" />
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.ActForResult.FirstScreen" />
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.LoginMVP.activitys.LoginMVP_LoginActivity" />
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.estudos.MVVM.MVVM" />
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.estudos.APIRetrofit.APIRetrofit" />
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.Paralelos.Apps.Jokenpo.AppJokenpo" />
-        <activity android:name="com.example.gouveiarocha.estudoskotlin.AcitivtysPrincipais.MainActivity">
+        <activity android:name=".Curso_UdemyKotlin2022.apps.GastoViagem.AppGastoViagem"></activity>
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.Secao20_Elementos.EstudoElementos1" />
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.Secao19_LinearLayout.EstudoLinearLayout" />
+        <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_HomeActvity" />
+        <activity android:name=".Paralelos.Estudos.ActForResult.SecondScreen" />
+        <activity android:name=".Paralelos.Estudos.ActForResult.FirstScreen" />
+        <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_LoginActivity" />
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.MVVM.MVVM" />
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.APIRetrofit.APIRetrofit" />
+        <activity android:name=".Paralelos.Apps.Jokenpo.AppJokenpo" />
+        <activity android:name=".AcitivtysPrincipais.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
