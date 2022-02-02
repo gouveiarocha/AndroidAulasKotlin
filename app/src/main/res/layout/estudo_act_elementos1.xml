@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Curso_UdemyKotlin2022.estudos.Secao20_Elementos.EstudoElementos1">
+    tools:context=".Curso_UdemyKotlin2022.estudos.Elementos_Secoes_20_24.EstudoElementos1">
 
     <TextView
         android:layout_width="match_parent"

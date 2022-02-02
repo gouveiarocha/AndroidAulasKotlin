@@ -1,4 +1,4 @@
-package com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.estudos.Secao19_LinearLayout;
+package com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25;
 
 import androidx.appcompat.app.AppCompatActivity;
 
