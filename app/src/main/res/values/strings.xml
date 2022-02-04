@@ -14,4 +14,15 @@
     <string name="preencha_campos">Preencha todos os campos!</string>
     <string name="preenche_valores_validos">Preencha com valores válidos!</string>
 
+    <!--App Motivation-->
+    <string name="app_motivation_nova_frase">Nova frase</string>
+    <string name="app_motivation_qual_seu_nome">Qual seu nome?</string>
+    <string name="app_motivation_usuario">Usuário</string>
+    <string name="app_motivation_frase">Frase</string>
+    <string name="app_motivation_salvar">Salvar</string>
+    <string name="app_motivation_vamos_comecar">Vamos começar?</string>
+    <string name="app_motivation_todas_as_frases">Todas as frases</string>
+    <string name="app_motivation_frases_de_motivacao">Frases de motivação</string>
+    <string name="app_motivation_frases_para_manha">Frases para manhã</string>
+
 </resources>
