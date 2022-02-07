@@ -10,7 +10,8 @@ open class SecurityPreferences(context: Context) {
         mPreference.edit().putString(key, value).apply()
     }
 
-    fun getString(key: String){
+    fun getString(key: String) : String {
+        return mPreference.getString(key, "") ?: "" //operador elvis
     }
 
 }

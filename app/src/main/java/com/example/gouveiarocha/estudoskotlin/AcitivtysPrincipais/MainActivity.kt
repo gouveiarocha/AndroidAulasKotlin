@@ -3,7 +3,7 @@ package com.example.gouveiarocha.estudoskotlin.AcitivtysPrincipais
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationSplash
+import com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationHome
 import com.example.gouveiarocha.estudoskotlin.R
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(Intent(this, AppMotivationSplash::class.java))
+        startActivity(Intent(this, AppMotivationHome::class.java))
 
     }
 

@@ -5,17 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.apps.Motivation.infra.MotivationConstants
 import com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.apps.Motivation.infra.SecurityPreferences
 import com.example.gouveiarocha.estudoskotlin.R
-import kotlinx.android.synthetic.main.app_act_motivation.*
+import kotlinx.android.synthetic.main.appmotivation_act_home.*
 
-class AppMotivationSplash : AppCompatActivity(), View.OnClickListener {
+class AppMotivationHome : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mSecurityPreferences: SecurityPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.app_act_motivation)
+        setContentView(R.layout.appmotivation_act_home)
 
         if (supportActionBar != null) {
             supportActionBar!!.hide()
@@ -37,11 +38,10 @@ class AppMotivationSplash : AppCompatActivity(), View.OnClickListener {
     private fun handleSave() {
         val name = appmotivation_edit_name.text.toString()
         if (name != "") {
-            mSecurityPreferences.storeString("name", name)
-            startActivity(Intent(this, AppMotivationPrincipal::class.java))
+            mSecurityPreferences.storeString(MotivationConstants.KEY.PERSON_NAME, name)
+            startActivity(Intent(this, AppMotivationMain::class.java))
         } else {
-            Toast.makeText(this, "Atenção: Digite seu nome para continuar...", Toast.LENGTH_SHORT)
-                .show()
+            Toast.makeText(this, "Atenção: Digite seu nome para continuar...", Toast.LENGTH_SHORT).show()
         }
     }
 }

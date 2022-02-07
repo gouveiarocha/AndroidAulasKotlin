@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name=".Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationPrincipal"></activity>
-        <activity android:name=".Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationSplash" />
+        <activity android:name=".Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationMain"></activity>
+        <activity android:name=".Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationHome" />
         <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25.EstudoRelativeLayoutExercicio" />
         <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25.EstudoRelativeLayout" />
         <activity android:name=".Curso_UdemyKotlin2022.estudos.Elementos_Secoes_20_24.EstudoElementos2" />

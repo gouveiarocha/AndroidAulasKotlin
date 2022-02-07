@@ -68,17 +68,17 @@ class AppJokenpo : AppCompatActivity() {
 
         when (escolhaUsuario){
 
-            0 -> opcaoUsuario.setImageResource(R.drawable.img_jokenpo_pedra)
-            1 -> opcaoUsuario.setImageResource(R.drawable.img_jokenpo_papel)
-            2 -> opcaoUsuario.setImageResource(R.drawable.img_jokenpo_tesoura)
+            0 -> opcaoUsuario.setImageResource(R.drawable.jokenpo_img_stone)
+            1 -> opcaoUsuario.setImageResource(R.drawable.jokenpo_img_paper)
+            2 -> opcaoUsuario.setImageResource(R.drawable.jokenpo_img_scissors)
 
         }
 
         when (escolhaApp){
 
-            0 -> opcaoApp.setImageResource(R.drawable.img_jokenpo_pedra)
-            1 -> opcaoApp.setImageResource(R.drawable.img_jokenpo_papel)
-            2 -> opcaoApp.setImageResource(R.drawable.img_jokenpo_tesoura)
+            0 -> opcaoApp.setImageResource(R.drawable.jokenpo_img_stone)
+            1 -> opcaoApp.setImageResource(R.drawable.jokenpo_img_paper)
+            2 -> opcaoApp.setImageResource(R.drawable.jokenpo_img_scissors)
 
         }
 

@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/img_papel"
-        app:srcCompat="@drawable/img_jokenpo_pedra" />
+        app:srcCompat="@drawable/jokenpo_img_stone" />
 
     <ImageView
         android:id="@+id/img_papel"
@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/img_pedra"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/img_jokenpo_papel" />
+        app:srcCompat="@drawable/jokenpo_img_paper" />
 
     <ImageView
         android:id="@+id/img_tesoura"
@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/img_papel"
         app:layout_constraintTop_toTopOf="@+id/img_papel"
-        app:srcCompat="@drawable/img_jokenpo_tesoura" />
+        app:srcCompat="@drawable/jokenpo_img_scissors" />
 
     <TextView
         android:id="@+id/res"
@@ -67,7 +67,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/img_jokenpo_padrao" />
+        app:srcCompat="@drawable/jokenpo_img_default" />
 
     <ImageView
         android:id="@+id/opcaoApp"
@@ -78,7 +78,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/opcaoUsuario"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/img_jokenpo_padrao" />
+        app:srcCompat="@drawable/jokenpo_img_default" />
 
     <TextView
         android:id="@+id/textView3"

@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.example.gouveiarocha.estudoskotlin.R
-import kotlinx.android.synthetic.main.app_act_gasto_viagem.*
+import kotlinx.android.synthetic.main.appgastoviagem_act.*
 import java.lang.NumberFormatException
 
 class AppGastoViagem : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.app_act_gasto_viagem)
+        setContentView(R.layout.appgastoviagem_act)
 
         button_calculate.setOnClickListener(this)
 
