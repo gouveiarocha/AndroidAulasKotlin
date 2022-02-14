@@ -1,4 +1,4 @@
-package com.example.gouveiarocha.estudoskotlin.Curso_UdemyKotlin2022.estudos.Kotlin.MyCodes.KOAN
+package com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.Kotlin.KOAN
 
 const val question = "life, the universe, and everything"
 const val answer = 42

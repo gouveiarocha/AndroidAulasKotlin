@@ -1,4 +1,4 @@
-package com.example.gouveiarocha.estudoskotlin.AcitivtysPrincipais
+package com.example.gouveiarocha.estudoskotlin.AcitivitysPrincipais
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

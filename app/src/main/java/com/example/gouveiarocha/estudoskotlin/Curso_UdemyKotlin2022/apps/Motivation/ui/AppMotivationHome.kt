@@ -25,6 +25,9 @@ class AppMotivationHome : AppCompatActivity(), View.OnClickListener {
         mSecurityPreferences = SecurityPreferences(this)
         appmotivation_btn_save.setOnClickListener(this)
 
+        if (mSecurityPreferences.getString(MotivationConstants.KEY.PERSON_NAME) != "" ){
+            startActivity(Intent(this, AppMotivationMain::class.java))
+        }
 
     }
 

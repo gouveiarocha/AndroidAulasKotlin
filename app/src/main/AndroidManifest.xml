@@ -11,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name=".Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationMain"></activity>
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25_32.EstudoConstraintLayout"></activity>
+        <activity android:name=".Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationMain" />
         <activity android:name=".Curso_UdemyKotlin2022.apps.Motivation.ui.AppMotivationHome" />
-        <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25.EstudoRelativeLayoutExercicio" />
-        <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25.EstudoRelativeLayout" />
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25_32.EstudoRelativeLayoutExercicio" />
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25_32.EstudoRelativeLayout" />
         <activity android:name=".Curso_UdemyKotlin2022.estudos.Elementos_Secoes_20_24.EstudoElementos2" />
         <activity android:name=".Curso_UdemyKotlin2022.apps.GastoViagem.AppGastoViagem" />
         <activity android:name=".Curso_UdemyKotlin2022.estudos.Elementos_Secoes_20_24.EstudoElementos1" />
-        <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25.EstudoLinearLayout" />
+        <activity android:name=".Curso_UdemyKotlin2022.estudos.Layouts_Secoes_19_25_32.EstudoLinearLayout" />
         <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_HomeActvity" />
         <activity android:name=".Paralelos.Estudos.ActForResult.SecondScreen" />
         <activity android:name=".Paralelos.Estudos.ActForResult.FirstScreen" />
@@ -26,7 +27,7 @@
         <activity android:name=".Curso_UdemyKotlin2022.estudos.MVVM.MVVM" />
         <activity android:name=".Curso_UdemyKotlin2022.estudos.APIRetrofit.APIRetrofit" />
         <activity android:name=".Paralelos.Apps.Jokenpo.AppJokenpo" />
-        <activity android:name=".AcitivtysPrincipais.MainActivity">
+        <activity android:name=".AcitivitysPrincipais.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
