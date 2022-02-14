@@ -7,6 +7,6 @@ import com.example.gouveiarocha.estudoskotlin.R
 class EstudoConstraintLayoutExercicio2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.estudo_act_constraint_layout_exercicio2)
+        //setContentView(R.layout.estudo_act_constraint_layout_exercicio2)
     }
 }
