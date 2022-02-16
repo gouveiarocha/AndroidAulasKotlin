@@ -31,7 +31,7 @@
         <activity android:name=".Curso_UdemyKotlin2022.estudos.APIRetrofit.APIRetrofit" />
         <activity android:name=".Paralelos.Apps.Jokenpo.AppJokenpo" />
         <activity
-            android:name=".AcitivitysPrincipais.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

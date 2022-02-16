@@ -1,24 +1,25 @@
-package com.example.gouveiarocha.estudoskotlin.Paralelos.Apps.Jokenpo
+package com.example.app_jokenpo
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gouveiarocha.estudoskotlin.R
-import kotlinx.android.synthetic.main.activity_app_jokenpo.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 /**
- * MVT. Refatorar para MVVM.
+ * MVTudo kkk -> Refatorar para MVVM e demais boas práticas.
  */
 
-class AppJokenpo : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     var escolhaUsuario: Int = 0
     var escolhaApp: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_app_jokenpo)
+        setContentView(R.layout.activity_main)
+
+
 
         img_pedra.setOnClickListener(View.OnClickListener {
             escolhaUsuario = 0

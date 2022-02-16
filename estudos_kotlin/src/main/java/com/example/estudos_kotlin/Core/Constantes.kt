@@ -6,5 +6,6 @@ package com.example.gouveiarocha.estudoskotlin.Paralelos.Estudos.Kotlin.Core
 
 fun main() {
 
+    print("teste")
 
 }
