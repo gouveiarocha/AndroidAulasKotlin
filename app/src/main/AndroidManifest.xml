@@ -30,7 +30,9 @@
         <activity android:name=".Curso_UdemyKotlin2022.estudos.MVVM.MVVM" />
         <activity android:name=".Curso_UdemyKotlin2022.estudos.APIRetrofit.APIRetrofit" />
         <activity android:name=".Paralelos.Apps.Jokenpo.AppJokenpo" />
-        <activity android:name=".AcitivitysPrincipais.MainActivity">
+        <activity
+            android:name=".AcitivitysPrincipais.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
