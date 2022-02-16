@@ -3,7 +3,9 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="AndroidEstudosKotlin.app" target="11" />
+      <module name="AndroidEstudosKotlin.app_convidados" target="11" />
       <module name="AndroidEstudosKotlin.app_jokenpo" target="11" />
+      <module name="AndroidEstudosKotlin.app_motivation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
