@@ -1,0 +1,28 @@
+Com relação a Kotlin:
+
+O que é ser Pragmática?
+R: Ser uma linnguagem prática, usurfruindo de muitos anos de experiência. Devs da jetbrains e da comunidade
+ajudaram a moldar a linguagem como ela foi lançada, trazendo confiança. Kotlin não vem para promover mudanças
+bruscas ou inovações complexas, mas aproveitar soluções bem sucedidas de outas linguagens sempre que possivel,
+reduzindo a complexidade no seu aprendizado. Kotlin não impoe uma ou outra maneira de programar, podemos
+usar as tecnicas que ja conhecemos com Java, ainda que vamos perceber que a linguagem abre novos caminhos
+para serem explorados, há essa flexibilidade. A lingugem também traz um ambiente agradavel para trabalhar
+atraves das IDEs. Há plugins para as IDEs(copmo IntelliJ) que foram desenvolvidos lado a lado com Kotlin
+O suporte as IDEs é outro ponto relevante no pragmatismo da linguagem, em muitos casos a ferramenta será
+capaz de identificar erros e sugerir correções, que podem e devem ser aproveitadas para melhorar o conhecimento
+da linguagem, aplicando-as no proprio codigo.
+
+O que é ser Consisa?
+R: A linguagem é concisa quando a sintaxe expressa bem e claramente o proposito do código, isso vai auxiliar devs a entender melhor
+e mais rapidamente codigos complexos e maiores. Kotlin possui uma vasta lib que permite subistituir grandes seções de codigos para
+executar tarefas comuns. A integração e uso de lambdas traz uma maior eficacia em encapsular partes comuns do codigo, e manter somente
+a parte unica, especifica para uma tarefa, no codigo do usuario. Um codigo mais conciso exite menos tempo para ser escrito e, principalmente
+para ser ligo e interpretado.. Isso aumenta a produtividade.
+
+o que é ser Segura?
+R: Em geral, significa que a linguagem possui recursos que permitem prever erros no codigo, apesar de não ser uma qualidade absoluta,
+pois nenhuma linguagem é capaz de impedir todos os erros. A inferencia da linguagem com relacao aos tipos de dados ajuda na segurança,
+além de enxutar o codigo, consome menos memoria e é melhor gerenciado. Outro ponto a destacar é o esforço que a linguagem faz para evitar
+excessoes do tipo null, o sistema monitora de forma efetiva valores que podem e não podem ser nulos e proibe operações que possam resultar
+no famoso nullpointerexception em tempo de execução.
+

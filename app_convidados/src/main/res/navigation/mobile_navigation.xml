@@ -22,4 +22,5 @@
         android:name="com.example.app_convidados.ui.absents.AbsentsGuestFragment"
         android:label="@string/menu_absents"
         tools:layout="@layout/fragment_absents" />
+
 </navigation>
