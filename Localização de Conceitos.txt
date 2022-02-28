@@ -1,0 +1,6 @@
+Vou gravar nesse doc a localização de conceitos importantes desenvolvidos nas aulas.
+
+--->Conceito de Singleton, aplicado para conexão de banco de dados. Classe DBHelper que tem o contrutor fechado e um objeto estatico
+para retornar a instancia da classe. Localização: Modulo: AppConvidados -> Classe GuestRepository.kt
+
+--->Implementação de RecyclerView, aplicado no App Convidados.
