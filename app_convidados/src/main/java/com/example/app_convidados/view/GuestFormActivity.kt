@@ -3,6 +3,7 @@ package com.example.app_convidados.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.app_convidados.viewmodel.GuestFormViewModel
@@ -37,8 +38,11 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
 
         mViewModel.saveGuest.observe(this, Observer {
             if (it){
-
+                Toast.makeText(this, "Sucesso.", Toast.LENGTH_LONG).show()
+            } else{
+                Toast.makeText(this, "Falha.", Toast.LENGTH_LONG).show()
             }
+            finish()
         })
 
     }

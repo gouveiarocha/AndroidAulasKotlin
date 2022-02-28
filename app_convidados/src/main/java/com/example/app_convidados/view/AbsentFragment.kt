@@ -9,11 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.app_convidados.databinding.FragmentAbsentsBinding
-import com.example.app_convidados.viewmodel.AbsentsGuestViewModel
+import com.example.app_convidados.viewmodel.AbsentViewModel
 
-class AbsentsGuestFragment : Fragment() {
+/**
+ * Mudar implementação abaixo para igual o curso.
+ */
 
-    private lateinit var absentsGuestViewModel: AbsentsGuestViewModel
+class AbsentFragment : Fragment() {
+
+    private lateinit var absentViewModel: AbsentViewModel
     private var _binding: FragmentAbsentsBinding? = null
 
     // This property is only valid between onCreateView and
@@ -25,14 +29,14 @@ class AbsentsGuestFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        absentsGuestViewModel =
-            ViewModelProvider(this).get(AbsentsGuestViewModel::class.java)
+        absentViewModel =
+            ViewModelProvider(this).get(AbsentViewModel::class.java)
 
         _binding = FragmentAbsentsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textSlideshow
-        absentsGuestViewModel.text.observe(viewLifecycleOwner, Observer {
+        absentViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
