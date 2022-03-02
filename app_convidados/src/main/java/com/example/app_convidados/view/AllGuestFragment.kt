@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +13,6 @@ import com.example.app_convidados.R
 import com.example.app_convidados.databinding.FragmentAllBinding
 import com.example.app_convidados.view.adapter.GuestAdapter
 import com.example.app_convidados.viewmodel.AllGuestViewModel
-import kotlinx.android.synthetic.main.fragment_all.*
 
 /**
  * Atenção, a implementação abaixo veio diretamente do android. Ela possui um novo objeto '_binding' to tipo FragmentAllBinding?
@@ -25,6 +23,8 @@ class AllGuestFragment : Fragment() {
 
     private lateinit var allGuestViewModel: AllGuestViewModel
     private var _binding: FragmentAllBinding? = null
+
+    private val mAdapter = GuestAdapter()
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
@@ -44,7 +44,11 @@ class AllGuestFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(context)
 
         // 3 - Definir um adapter
-        recycler.adapter = GuestAdapter()
+        recycler.adapter = mAdapter
+
+        observer()
+
+        allGuestViewModel.load()
 
         return root
 
@@ -54,4 +58,13 @@ class AllGuestFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    private fun observer() {
+        allGuestViewModel.guestList.observe(this, Observer {
+            mAdapter.updateGuests(it)
+
+        })
+    }
+
+
 }

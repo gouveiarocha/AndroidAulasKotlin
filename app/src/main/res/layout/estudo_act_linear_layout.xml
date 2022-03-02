@@ -48,6 +48,8 @@
             android:text="Teste Gravity" />
 
         <!--Layout Gravity - Alinhamento do elemento em relação ao elemento pai-->
+
+        <!--Customizações [Collors]-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,7 +57,6 @@
             android:paddingBottom="20dp"
             android:text="Teste Layout Gravity" />
 
-        <!--Customizações [Collors]-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
