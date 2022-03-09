@@ -8,14 +8,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_convidados.R
 import com.example.app_convidados.service.model.GuestModel
+import com.example.app_convidados.view.listener.GuestListener
 
 class GuestAdapter : RecyclerView.Adapter<GuestViewHolder>() {
 
     private var mGuestList: List<GuestModel> = arrayListOf()
+    private lateinit var mListener: GuestListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GuestViewHolder {
         val item = LayoutInflater.from(parent.context).inflate(R.layout.row_guest, parent, false)
-        return GuestViewHolder(item)
+        return GuestViewHolder(item, mListener)
     }
 
     override fun getItemCount(): Int {
@@ -31,16 +33,28 @@ class GuestAdapter : RecyclerView.Adapter<GuestViewHolder>() {
         notifyDataSetChanged()
     }
 
-}
-
-class GuestViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-    fun bind(guest: GuestModel) {
-        val guestName = itemView.findViewById<TextView>(R.id.guest_name)
-        val guestPresence = itemView.findViewById<CheckBox>(R.id.guest_presence)
-        guestName.text = guest.name
-        guestPresence.isChecked = guest.presence
+    fun attachListener(listener: GuestListener){
+        mListener = listener
     }
 
+}
+
+class GuestViewHolder(itemView: View, private val listener: GuestListener) : RecyclerView.ViewHolder(itemView) {
+    fun bind(guest: GuestModel) {
+
+        //nome
+        val guestName = itemView.findViewById<TextView>(R.id.guest_name)
+        guestName.text = guest.name
+
+        //presença
+        val guestPresence = itemView.findViewById<CheckBox>(R.id.guest_presence)
+        guestPresence.isChecked = guest.presence
+
+        //evento de click no item da lista.
+        guestName.setOnClickListener{
+            listener.onClick(guest.id) //método da classe GuestListener que criamos para disparar os eventos de click.
+        }
+
+    }
 }
 

@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.app_convidados.viewmodel.GuestFormViewModel
 import com.example.app_convidados.R
+import com.example.app_convidados.service.constants.GuestConstants
 import kotlinx.android.synthetic.main.activity_guest_form.*
 
 class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
@@ -20,6 +21,7 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
 
         mViewModel = ViewModelProvider(this).get(GuestFormViewModel::class.java)
 
+        loadData()
         setListeners()
         observe()
 
@@ -37,14 +39,37 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
     private fun observe() {
 
         mViewModel.saveGuest.observe(this, Observer {
-            if (it){
-                Toast.makeText(this, "Sucesso.", Toast.LENGTH_LONG).show()
-            } else{
-                Toast.makeText(this, "Falha.", Toast.LENGTH_LONG).show()
+            if (it) {
+                Toast.makeText(this, "Convidado salvo com sucesso !!!", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(
+                    this,
+                    "Ops, ocorreu alguma falha ao salvar o usuário... =( ",
+                    Toast.LENGTH_LONG
+                ).show()
             }
             finish()
         })
 
+        mViewModel.guest.observe(this, Observer {
+            edit_name.setText(it.name)
+            if (it.presence) {
+                radio_presence.isChecked = true
+            } else {
+                radio_absent.isChecked = true
+            }
+
+        })
+
+    }
+
+    private fun loadData() {
+        val bundle = intent.extras
+        if (bundle != null) {
+            val id = bundle.getInt(GuestConstants.ID)
+            //carregar o usuario
+            mViewModel.load(id)
+        }
     }
 
     private fun setListeners() {

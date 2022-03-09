@@ -1,5 +1,6 @@
 package com.example.app_convidados.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_convidados.R
 import com.example.app_convidados.databinding.FragmentAllBinding
+import com.example.app_convidados.service.constants.GuestConstants
 import com.example.app_convidados.view.adapter.GuestAdapter
+import com.example.app_convidados.view.listener.GuestListener
 import com.example.app_convidados.viewmodel.AllGuestViewModel
 
 /**
@@ -25,6 +28,8 @@ class AllGuestFragment : Fragment() {
     private var _binding: FragmentAllBinding? = null
 
     private val mAdapter = GuestAdapter()
+
+    private lateinit var mListener: GuestListener
 
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
@@ -46,12 +51,29 @@ class AllGuestFragment : Fragment() {
         // 3 - Definir um adapter
         recycler.adapter = mAdapter
 
-        observer()
+        mListener = object : GuestListener{
+            override fun onClick(id: Int) {
+                //sobescreve o metodo de onClick que criamos na interface
+                //vamos abrir GuestFormActivity passando os dados do convidado para edição.
+                val intent = Intent(context, GuestFormActivity::class.java)
+                val bundle = Bundle()
+                bundle.putInt(GuestConstants.ID, id)
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+        }
 
-        allGuestViewModel.load()
+        mAdapter.attachListener(mListener)
+
+        observer()
 
         return root
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        allGuestViewModel.load()
     }
 
     override fun onDestroyView() {
@@ -62,9 +84,7 @@ class AllGuestFragment : Fragment() {
     private fun observer() {
         allGuestViewModel.guestList.observe(this, Observer {
             mAdapter.updateGuests(it)
-
         })
     }
-
 
 }

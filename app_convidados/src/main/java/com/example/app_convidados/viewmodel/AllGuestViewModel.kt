@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.app_convidados.service.model.GuestModel
 import com.example.app_convidados.service.repository.GuestRepository
+import com.example.app_convidados.view.listener.GuestListener
 
 class AllGuestViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -16,7 +17,7 @@ class AllGuestViewModel(application: Application) : AndroidViewModel(application
     private val _guestList = MutableLiveData<List<GuestModel>>()
     val guestList: LiveData<List<GuestModel>> = _guestList
 
-    fun load(){
+    fun load() {
         _guestList.value = mGuestRepository.getAll()
     }
 
