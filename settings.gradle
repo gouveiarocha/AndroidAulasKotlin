@@ -1,5 +1,4 @@
 rootProject.name = "AndroidEstudosKotlin"
 include ':app'
-include ':estudos_kotlin'
 include ':app_jokenpo'
 include ':app_convidados'
