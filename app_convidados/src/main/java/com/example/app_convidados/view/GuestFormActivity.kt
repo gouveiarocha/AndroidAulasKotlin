@@ -2,6 +2,7 @@ package com.example.app_convidados.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.activity_guest_form.*
 class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var mViewModel: GuestFormViewModel
+    private var mGuestId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +23,11 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
 
         mViewModel = ViewModelProvider(this).get(GuestFormViewModel::class.java)
 
-        loadData()
         setListeners()
         observe()
+        loadData()
+
+        radio_presence.isChecked = true
 
     }
 
@@ -32,7 +36,7 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
         if (id == R.id.button_save) {
             val name = edit_name.text.toString()
             val presence = radio_presence.isChecked
-            mViewModel.save(name, presence)
+            mViewModel.save(mGuestId, name, presence)
         }
     }
 
@@ -66,9 +70,9 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
     private fun loadData() {
         val bundle = intent.extras
         if (bundle != null) {
-            val id = bundle.getInt(GuestConstants.ID)
+            mGuestId = bundle.getInt(GuestConstants.ID)
             //carregar o usuario
-            mViewModel.load(id)
+            mViewModel.load(mGuestId)
         }
     }
 

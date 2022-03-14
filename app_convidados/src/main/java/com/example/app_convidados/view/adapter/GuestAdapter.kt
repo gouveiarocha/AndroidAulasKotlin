@@ -1,5 +1,6 @@
 package com.example.app_convidados.view.adapter
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,13 +34,14 @@ class GuestAdapter : RecyclerView.Adapter<GuestViewHolder>() {
         notifyDataSetChanged()
     }
 
-    fun attachListener(listener: GuestListener){
+    fun attachListener(listener: GuestListener) {
         mListener = listener
     }
 
 }
 
-class GuestViewHolder(itemView: View, private val listener: GuestListener) : RecyclerView.ViewHolder(itemView) {
+class GuestViewHolder(itemView: View, private val listener: GuestListener) :
+    RecyclerView.ViewHolder(itemView) {
     fun bind(guest: GuestModel) {
 
         //nome
@@ -51,8 +53,20 @@ class GuestViewHolder(itemView: View, private val listener: GuestListener) : Rec
         guestPresence.isChecked = guest.presence
 
         //evento de click no item da lista.
-        guestName.setOnClickListener{
-            listener.onClick(guest.id) //método da classe GuestListener que criamos para disparar os eventos de click.
+        guestName.setOnClickListener {
+            listener.onClick(guest.id) //método da interface GuestListener que criamos para disparar os eventos de click.
+        }
+
+        //evento de click longo no item da lista
+        guestName.setOnLongClickListener {
+            AlertDialog.Builder(itemView.context)
+                .setTitle(R.string.remocao_convidado)
+                .setMessage(R.string.deseja_remover)
+                .setPositiveButton(R.string.remover) { dialog, which ->
+                    listener.onDelete(guest.id)
+                }
+                .setNeutralButton(R.string.cancelar, null).show()
+            true
         }
 
     }
