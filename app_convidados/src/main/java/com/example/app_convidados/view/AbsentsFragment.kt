@@ -5,56 +5,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_convidados.R
-import com.example.app_convidados.databinding.FragmentAllBinding
+import com.example.app_convidados.databinding.FragmentAbsentsBinding
 import com.example.app_convidados.service.constants.GuestConstants
 import com.example.app_convidados.view.adapter.GuestAdapter
 import com.example.app_convidados.view.listener.GuestListener
 import com.example.app_convidados.viewmodel.GuestViewModel
 
-/**
- * Atenção, a implementação abaixo veio diretamente do android. Ela possui um novo objeto '_binding' to tipo FragmentAllBinding?
- * Vou manter essa implementação assim para fins de estudo. Os demais views vou seguir igual o curso.
- */
-
-class AllGuestFragment : Fragment() {
+class AbsentsFragment : Fragment() {
 
     private lateinit var mViewModel: GuestViewModel
-    private var _binding: FragmentAllBinding? = null
-
     private val mAdapter = GuestAdapter()
-
     private lateinit var mListener: GuestListener
 
-    // This property is only valid between onCreateView and onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View? {
         mViewModel = ViewModelProvider(this).get(GuestViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_absents, container, false)
 
-        _binding = FragmentAllBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        // RecyclerView
-
-        // 1 - Obter a recycler
-        val recycler = root.findViewById<RecyclerView>(R.id.recycler_all_guests)
-
-        // 2 - Definir o layout
+        val recycler = root.findViewById<RecyclerView>(R.id.recycler_absents)
         recycler.layoutManager = LinearLayoutManager(context)
-
-        // 3 - Definir um adapter
         recycler.adapter = mAdapter
 
-        mListener = object : GuestListener{
+        mListener = object : GuestListener {
             override fun onClick(id: Int) {
-                //sobescreve o metodo de onClick que criamos na interface
-                //vamos abrir GuestFormActivity passando os dados do convidado para edição.
                 val intent = Intent(context, GuestFormActivity::class.java)
                 val bundle = Bundle()
                 bundle.putInt(GuestConstants.ID, id)
@@ -64,7 +44,7 @@ class AllGuestFragment : Fragment() {
 
             override fun onDelete(id: Int) {
                 mViewModel.delete(id)
-                mViewModel.load(GuestConstants.FILTER.ALL)
+                mViewModel.load(GuestConstants.FILTER.ABSENTS)
             }
 
         }
@@ -74,17 +54,11 @@ class AllGuestFragment : Fragment() {
         observer()
 
         return root
-
     }
 
     override fun onResume() {
         super.onResume()
-        mViewModel.load(GuestConstants.FILTER.ALL)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        mViewModel.load(GuestConstants.FILTER.ABSENTS)
     }
 
     private fun observer() {
