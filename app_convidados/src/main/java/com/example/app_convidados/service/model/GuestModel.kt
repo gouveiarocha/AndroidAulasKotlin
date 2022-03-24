@@ -20,9 +20,8 @@ class GuestModel{
     var name: String = ""
 
     @ColumnInfo(name = "presence")
-    var presense: Boolean = true
+    var presence: Boolean = true
 
     //val id: Int = 0, var name: String, var presence: Boolean
-
 
 }
