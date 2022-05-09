@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/drawable/ic_action_adiciona.xml" value="0.1395" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/layout/activity_formulario_noticia.xml" value="0.20416666666666666" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/layout/activity_lista_noticias.xml" value="0.20416666666666666" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/layout/activity_visualiza_noticia.xml" value="0.20416666666666666" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/layout/item_noticia.xml" value="0.20416666666666666" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/menu/formulario_noticia_menu.xml" value="0.19166666666666668" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/Alura_Arquitetura_Technews/src/main/res/menu/visualiza_noticia_menu.xml" value="0.19166666666666668" />
+        <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/alura_arquitetura_technews/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/app/src/main/res/layout/appgastoviagem_act.xml" value="0.20416666666666666" />
         <entry key="..\:/Douglas/DEV/Android Studio WorkSpace/AndroidEstudosKotlin/app_jokenpo/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
