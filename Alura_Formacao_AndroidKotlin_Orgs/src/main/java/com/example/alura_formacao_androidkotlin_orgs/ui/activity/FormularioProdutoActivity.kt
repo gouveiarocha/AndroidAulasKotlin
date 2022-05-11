@@ -4,10 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import com.example.alura_formacao_androidkotlin_orgs.R
 import com.example.alura_formacao_androidkotlin_orgs.model.Produto
-import com.example.alura_formacao_androidkotlin_orgs.rapository.ProdutosDao
+import com.example.alura_formacao_androidkotlin_orgs.repository.ProdutosDao
 import java.math.BigDecimal
 
 class FormularioProdutoActivity : AppCompatActivity(R.layout.activity_formulario_produto) {

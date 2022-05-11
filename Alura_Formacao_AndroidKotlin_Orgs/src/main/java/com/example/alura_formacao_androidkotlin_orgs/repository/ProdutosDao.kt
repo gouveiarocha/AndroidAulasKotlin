@@ -1,4 +1,4 @@
-package com.example.alura_formacao_androidkotlin_orgs.rapository
+package com.example.alura_formacao_androidkotlin_orgs.repository
 
 import com.example.alura_formacao_androidkotlin_orgs.model.Produto
 
