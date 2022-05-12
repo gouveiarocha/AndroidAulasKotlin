@@ -1,14 +1,20 @@
 package com.example.alura_formacao_androidkotlin_orgs.ui.adapter
 
 import android.content.Context
+import android.os.Build
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.ImageLoader
+import coil.decode.GifDecoder
+import coil.decode.ImageDecoderDecoder
+import coil.load
 import com.example.alura_formacao_androidkotlin_orgs.model.Produto
 import com.example.alura_formacao_androidkotlin_orgs.R
 import com.example.alura_formacao_androidkotlin_orgs.databinding.ProdutoItemBinding
+import java.text.NumberFormat
+import java.util.*
 
 class ListaProdutosAdapter(
     private val context: Context,
@@ -28,19 +34,30 @@ class ListaProdutosAdapter(
     // do RecyclerView.ViewHolder() e o parâmetro binding pode ser utilizado para buscar as views d
     // esejadas.
 
-    class ViewHolder(binding: ProdutoItemBinding) :
+    class ViewHolder(private val binding: ProdutoItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun vincula(produto: Produto) {
+
             val nome = itemView.findViewById<TextView>(R.id.produto_item_nome)
             nome.text = produto.nome
+
             val descricao = itemView.findViewById<TextView>(R.id.produto_item_descricao)
             descricao.text = produto.descricao
-            val valor = itemView.findViewById<TextView>(R.id.produto_item_valor)
-            valor.text = produto.valor.toPlainString()
+
+            //com binding
+            val valor = binding.produtoItemValor
+            val formatador: NumberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "br"))
+            valor.text = formatador.format(produto.valor)
+
+            //usando o coil para setar a imagem
+            binding.imageView.load(produto.imagem)
+
         }
 
     }
+
+
 
     override fun onCreateViewHolder(
 

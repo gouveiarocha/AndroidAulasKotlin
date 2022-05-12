@@ -1,7 +1,9 @@
 package com.example.alura_formacao_androidkotlin_orgs.ui.activity
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alura_formacao_androidkotlin_orgs.R
@@ -26,6 +28,7 @@ class ListaProdutosActivity : AppCompatActivity() {
 
         configuraRecyclerView()
         configuraFab()
+
     }
 
     override fun onResume() {
