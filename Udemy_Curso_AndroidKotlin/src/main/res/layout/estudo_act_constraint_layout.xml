@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayout">
+
+    <Button
+        android:id="@+id/estudoconstraintlayout_btn_teste1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="botao teste 1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="botao teste 2"
+        app:layout_constraintLeft_toRightOf="@id/estudoconstraintlayout_btn_teste1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/estudoconstraintlayout_btn_teste3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="botao teste 3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/estudoconstraintlayout_btn_teste1" />
+
+    <Button
+        android:id="@+id/estudoconstraintlayout_btn_teste4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="botao teste 4 - bias"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/estudoconstraintlayout_btn_teste3"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="botao teste 6 - angulo"
+        app:layout_constraintCircle="@id/estudoconstraintlayout_btn_teste4"
+        app:layout_constraintCircleAngle="240"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintLeft_toLeftOf="@id/estudoconstraintlayout_btn_teste4"
+        app:layout_constraintTop_toTopOf="@+id/estudoconstraintlayout_btn_teste4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

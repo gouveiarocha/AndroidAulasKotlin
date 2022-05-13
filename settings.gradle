@@ -1,6 +1,6 @@
 rootProject.name = "AndroidEstudosKotlin"
-include ':app'
-include ':app_jokenpo'
-include ':app_convidados'
-include ':Alura_Arquitetura_Technews'
+include ':Udemy_Curso_AndroidKotlin'
+include ':RefatoradoKotlin_AppJokenpo'
+include ':Udemy_Curso_AndroidKotlin_AppConvidados'
+include ':Alura_Formacao_AndroidArquitetura_Technews'
 include ':Alura_Formacao_AndroidKotlin_Orgs'

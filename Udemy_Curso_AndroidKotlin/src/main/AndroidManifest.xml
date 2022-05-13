@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gouveiarocha.estudoskotlin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppAulasKotlin">
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.EstudoLinearLayout"></activity>
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio2" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio1" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutChain" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayout" />
+        <activity android:name=".apps.Motivation.ui.AppMotivationMain" />
+        <activity android:name=".apps.Motivation.ui.AppMotivationHome" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayoutExercicio" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayout" />
+        <activity android:name=".estudos.Elementos_Secoes_20_24.EstudoElementos2" />
+        <activity android:name=".apps.GastoViagem.AppGastoViagem" />
+        <activity android:name=".estudos.Elementos_Secoes_20_24.EstudoElementos1" />
+        <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_HomeActvity" />
+        <activity android:name=".Paralelos.Estudos.ActForResult.SecondScreen" />
+        <activity android:name=".Paralelos.Estudos.ActForResult.FirstScreen" />
+        <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_LoginActivity" />
+        <activity android:name=".estudos.MVVM.MVVM" />
+        <activity android:name=".estudos.APIRetrofit.APIRetrofit" />
+        <activity android:name=".Paralelos.Apps.Jokenpo.AppJokenpo" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

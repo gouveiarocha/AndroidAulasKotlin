@@ -10,11 +10,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Alura_Arquitetura_Technews" />
+            <option value="$PROJECT_DIR$/Alura_Formacao_AndroidArquitetura_Technews" />
             <option value="$PROJECT_DIR$/Alura_Formacao_AndroidKotlin_Orgs" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app_convidados" />
-            <option value="$PROJECT_DIR$/app_jokenpo" />
+            <option value="$PROJECT_DIR$/RefatoradoKotlin_AppJokenpo" />
+            <option value="$PROJECT_DIR$/Udemy_Curso_AndroidKotlin" />
+            <option value="$PROJECT_DIR$/Udemy_Curso_AndroidKotlin_AppConvidados" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
