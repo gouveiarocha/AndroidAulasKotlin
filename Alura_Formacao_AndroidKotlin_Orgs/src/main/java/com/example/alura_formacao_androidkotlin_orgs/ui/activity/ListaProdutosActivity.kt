@@ -1,16 +1,11 @@
 package com.example.alura_formacao_androidkotlin_orgs.ui.activity
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import com.example.alura_formacao_androidkotlin_orgs.R
 import com.example.alura_formacao_androidkotlin_orgs.databinding.ActivityListaProdutosBinding
-import com.example.alura_formacao_androidkotlin_orgs.repository.ProdutosDao
+import com.example.alura_formacao_androidkotlin_orgs.dao.ProdutosDao
 import com.example.alura_formacao_androidkotlin_orgs.ui.adapter.ListaProdutosAdapter
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListaProdutosActivity : AppCompatActivity() {
 
@@ -24,11 +19,10 @@ class ListaProdutosActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root) //root para a view - sem isso o binding não funciona!!!
-
+        setContentView(binding.root) // root para a view - sem isso o binding não funciona!!!
+        setTitle("Orgs...")
         configuraRecyclerView()
         configuraFab()
-
     }
 
     override fun onResume() {

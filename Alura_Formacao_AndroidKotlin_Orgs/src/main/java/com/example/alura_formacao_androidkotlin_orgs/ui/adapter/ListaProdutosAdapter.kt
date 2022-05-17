@@ -1,18 +1,15 @@
 package com.example.alura_formacao_androidkotlin_orgs.ui.adapter
 
 import android.content.Context
-import android.os.Build
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import coil.ImageLoader
-import coil.decode.GifDecoder
-import coil.decode.ImageDecoderDecoder
-import coil.load
-import com.example.alura_formacao_androidkotlin_orgs.model.Produto
 import com.example.alura_formacao_androidkotlin_orgs.R
 import com.example.alura_formacao_androidkotlin_orgs.databinding.ProdutoItemBinding
+import com.example.alura_formacao_androidkotlin_orgs.utils.extensions.tentaCarregarImagem
+import com.example.alura_formacao_androidkotlin_orgs.model.Produto
 import java.text.NumberFormat
 import java.util.*
 
@@ -31,8 +28,8 @@ class ListaProdutosAdapter(
     //Texto com a explicação copiado do artigo:
     //Observe que a grande diferença é que o ViewHolder recebe o View Binding do layout desejado,
     // nesse caso, o ItemNotaBinding. Então, é enviada a view com o binding.root para o construtor
-    // do RecyclerView.ViewHolder() e o parâmetro binding pode ser utilizado para buscar as views d
-    // esejadas.
+    // do RecyclerView.ViewHolder() e o parâmetro binding pode ser utilizado para buscar as views
+    // desejadas.
 
     class ViewHolder(private val binding: ProdutoItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -50,13 +47,30 @@ class ListaProdutosAdapter(
             val formatador: NumberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "br"))
             valor.text = formatador.format(produto.valor)
 
-            //usando o coil para setar a imagem
-            binding.imageView.load(produto.imagem)
+            //exemplo visibilidade da view, aqui, vamos esconder a imagem caso seja null
+            val visibilidade = if (produto.imagem != null) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+            binding.imageView.visibility = visibilidade
+
+            //exemplo usando o coil para setar a imagem, caso seja null, configura outra img automaticamente
+            binding.imageView.tentaCarregarImagem(produto.imagem)
+
+            //trecho refatorado para extension
+//            binding.imageView.load(produto.imagem) {
+//                //img durante carregamento
+//                //placeholder(R.drawable.placeholder)
+//                //fallback vai configurar uma imagem caso a imagem seja null.
+//                fallback(R.drawable.erro)
+//                //error vai configurar uma imagem caso ocorra algum erro ao carrega-la.
+//                error(R.drawable.erro)
+//            }
 
         }
 
     }
-
 
 
     override fun onCreateViewHolder(

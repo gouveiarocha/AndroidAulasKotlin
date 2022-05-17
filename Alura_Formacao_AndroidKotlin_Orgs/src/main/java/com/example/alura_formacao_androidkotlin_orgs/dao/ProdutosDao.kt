@@ -1,4 +1,4 @@
-package com.example.alura_formacao_androidkotlin_orgs.repository
+package com.example.alura_formacao_androidkotlin_orgs.dao
 
 import com.example.alura_formacao_androidkotlin_orgs.model.Produto
 import java.math.BigDecimal
