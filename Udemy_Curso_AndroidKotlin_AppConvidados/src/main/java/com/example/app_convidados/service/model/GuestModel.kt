@@ -4,9 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-// obs: no curso, essa classe é alterada para uso da lib room, após a conclusão do app convidados
+// Obs: no curso, essa classe é alterada para uso da lib room após a conclusão do app convidados,
 // a implementação original abordada no curso utilizava uma classe database helper para manipular
-// os dados e salvar no db
+// os dados e salvar no db.
 
 // Entidade
 @Entity(tableName = "Guest")

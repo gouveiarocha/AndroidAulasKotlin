@@ -27,7 +27,7 @@
         <activity android:name=".Paralelos.Estudos.ActForResult.SecondScreen" />
         <activity android:name=".Paralelos.Estudos.ActForResult.FirstScreen" />
         <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_LoginActivity" />
-        <activity android:name=".estudos.MVVM.MVVM" />
+        <activity android:name=".estudos.MVVM.MVVMActivity" />
         <activity android:name=".estudos.APIRetrofit.APIRetrofit" />
         <activity android:name=".Paralelos.Apps.Jokenpo.AppJokenpo" />
         <activity

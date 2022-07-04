@@ -1,7 +1,7 @@
 package com.example.gouveiarocha.estudoskotlin.estudos.APIRetrofit
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.gouveiarocha.estudoskotlin.R
 import retrofit2.Call
 import retrofit2.Callback

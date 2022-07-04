@@ -1,30 +1,33 @@
 package com.example.gouveiarocha.estudoskotlin.estudos.MVVM
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.gouveiarocha.estudoskotlin.R
+import com.example.gouveiarocha.estudoskotlin.databinding.ActivityMvvmBinding
 import kotlinx.android.synthetic.main.activity_mvvm.*
 
-class MVVM : AppCompatActivity() {
+class MVVMActivity : AppCompatActivity() {
+
+    private val binding by lazy {
+        ActivityMvvmBinding.inflate(layoutInflater)
+    }
 
     private lateinit var mViewModel: MVVMVielModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mvvm)
-
+        setContentView(binding.root)
         mViewModel = ViewModelProvider(this).get(MVVMVielModel::class.java)
 
         //Inicializa Observers
         this.createObservers()
 
-        buttonLogin.setOnClickListener {
+        //Evento de clique botão de Login
+        binding.buttonLogin.setOnClickListener {
             val name = editName.text.toString()
             mViewModel.doLogin(name)
-
         }
 
     }
@@ -32,12 +35,12 @@ class MVVM : AppCompatActivity() {
     fun createObservers() {
 
         //Observer textWelcome
-        mViewModel.textWelcome.observe(this, Observer {
+        mViewModel.welcome().observe(this, Observer {
             textWelcome.text = it
         })
 
         //Observer login
-        mViewModel.login.observe(this, {
+        mViewModel.login().observe(this, Observer {
             if (it) {
                 Toast.makeText(applicationContext, "Sucesso!", Toast.LENGTH_SHORT).show()
             } else {
