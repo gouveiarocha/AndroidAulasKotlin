@@ -16,7 +16,6 @@ class NextTasksFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View? {
         mViewModel = ViewModelProvider(this).get(NextTasksViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_next_tasks, container, false)
-
         return root
     }
 }

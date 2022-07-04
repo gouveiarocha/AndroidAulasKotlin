@@ -18,28 +18,27 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener {
 
         mViewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
 
-        // Inicializa eventos
+        // Inicializa Eventos
         listeners()
         observe()
+
     }
 
     override fun onClick(v: View) {
-        val id = v.id
-        if (id == R.id.button_save) {
-
+        if (v.id == R.id.button_save) {
             val name = edit_name.text.toString()
             val email = edit_email.text.toString()
             val password = edit_password.text.toString()
-
             mViewModel.create(name, email, password)
         }
     }
 
-    private fun observe() {
-    }
-
     private fun listeners() {
         button_save.setOnClickListener(this)
+    }
+
+    private fun observe() {
+
     }
 
 }

@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        // FAB
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         // Observadores
         observe()
+
     }
 
     override fun onResume() {
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+    /** Observa ViewModel */
     private fun observe() {
 
     }

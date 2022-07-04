@@ -16,10 +16,7 @@ class TaskViewHolder(itemView: View, val listener: TaskListener) :
     private var mTextDueDate: TextView = itemView.findViewById(R.id.text_due_date)
     private var mImageTask: ImageView = itemView.findViewById(R.id.image_task)
 
-    /**
-     * Atribui valores aos elementos de interface e também eventos
-     */
-
+    /** Atribui valores aos elementos de interface e também aos eventos... */
     fun bindData() {
 
         this.mTextDescription.text = ""

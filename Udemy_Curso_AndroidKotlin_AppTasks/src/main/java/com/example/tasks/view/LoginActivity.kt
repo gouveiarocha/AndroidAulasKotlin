@@ -1,9 +1,9 @@
 package com.example.tasks.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.tasks.R
 import com.example.tasks.viewmodel.LoginViewModel
@@ -20,11 +20,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         mViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         // Inicializa eventos
-        setListeners();
+        setListeners()
         observe()
 
         // Verifica se usuário está logado
         verifyLoggedUser()
+
     }
 
     override fun onClick(v: View) {
@@ -35,33 +36,26 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    /**
-     * Inicializa os eventos de click
-     */
+    /** Inicializa os eventos de click */
     private fun setListeners() {
         button_login.setOnClickListener(this)
         text_register.setOnClickListener(this)
     }
 
-    /**
-     * Verifica se usuário está logado
-     */
+    /** Observa ViewModel */
+    private fun observe() {
+
+    }
+
+    /** Verifica se usuário está logado */
     private fun verifyLoggedUser() {
         mViewModel.verifyLoggedUser()
     }
 
-    /**
-     * Observa ViewModel
-     */
-    private fun observe() {}
-
-    /**
-     * Autentica usuário
-     */
+    /** Autentica usuário */
     private fun handleLogin() {
         val email = edit_email.text.toString()
         val password = edit_password.text.toString()
-
         mViewModel.doLogin(email, password)
     }
 

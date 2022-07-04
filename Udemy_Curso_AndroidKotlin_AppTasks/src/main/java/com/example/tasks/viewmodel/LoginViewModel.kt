@@ -5,16 +5,14 @@ import androidx.lifecycle.AndroidViewModel
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
-    /**
-     * Faz login usando API
-     */
-    fun doLogin(email: String, password: String) {
+    /** Verifica se usuário está logado */
+    fun verifyLoggedUser() {
+
     }
 
-    /**
-     * Verifica se usuário está logado
-     */
-    fun verifyLoggedUser() {
+    /** Faz login usando API */
+    fun doLogin(email: String, password: String) {
+
     }
 
 }

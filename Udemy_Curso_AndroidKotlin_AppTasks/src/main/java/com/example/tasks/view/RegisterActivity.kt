@@ -21,25 +21,26 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         // Inicializa eventos
         listeners()
         observe()
+
     }
 
     override fun onClick(v: View) {
-        val id = v.id
-        if (id == R.id.button_save) {
-
+        if (v.id == R.id.button_save) {
             val name = edit_name.text.toString()
             val email = edit_email.text.toString()
             val password = edit_password.text.toString()
-
             mViewModel.create(name, email, password)
         }
     }
 
+    /** Inicializa os eventos de click */
+    private fun listeners() {
+        button_save.setOnClickListener(this)
+    }
+
+    /** Observa ViewModel */
     private fun observe() {
 
     }
 
-    private fun listeners() {
-        button_save.setOnClickListener(this)
-    }
 }

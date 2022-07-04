@@ -43,20 +43,25 @@ class AllTasksFragment : Fragment() {
             }
 
             override fun onDeleteClick(id: Int) {
+
             }
 
             override fun onCompleteClick(id: Int) {
+
             }
 
             override fun onUndoClick(id: Int) {
+
             }
+
         }
 
-        // Cria os observadores
+        // Observadores
         observe()
 
         // Retorna view
         return root
+
     }
 
     override fun onResume() {
@@ -64,6 +69,8 @@ class AllTasksFragment : Fragment() {
         mAdapter.attachListener(mListener)
     }
 
-    private fun observe() {}
+    private fun observe() {
+
+    }
 
 }

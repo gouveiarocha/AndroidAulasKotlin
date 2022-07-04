@@ -16,7 +16,6 @@ class ExpiredTasksFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View? {
         mViewModel = ViewModelProvider(this).get(ExpiredTasksViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_expired_tasks, container, false)
-
         return root
     }
 }
