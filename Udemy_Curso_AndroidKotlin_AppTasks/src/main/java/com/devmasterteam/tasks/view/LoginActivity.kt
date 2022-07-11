@@ -1,9 +1,12 @@
 package com.devmasterteam.tasks.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.databinding.ActivityLoginBinding
 import com.devmasterteam.tasks.viewmodel.LoginViewModel
 
@@ -15,24 +18,45 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Variáveis da classe
+        // Instancia e Inicializa a ViewModel.
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
 
-        // Layout
+        // Instancia e Inicializa o Layout com o binding.
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Eventos
+        // Init Click Listener(s).
         binding.buttonLogin.setOnClickListener(this)
         binding.textRegister.setOnClickListener(this)
 
-        // Observadores
+        // Init Observer(s).
         observe()
-    }
 
-    override fun onClick(v: View) {
     }
 
     private fun observe() {
+
+        viewModel.login.observe(this) {
+            if (it.status()) {
+                startActivity(Intent(applicationContext, MainActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(applicationContext, it.message(), Toast.LENGTH_LONG).show()
+            }
+        }
+
     }
+
+    private fun handleLogin() {
+        val email = binding.editEmail.text.toString()
+        val password = binding.editPassword.text.toString()
+        viewModel.doLogin(email, password)
+    }
+
+    override fun onClick(v: View) {
+        if (v.id == R.id.button_login) {
+            handleLogin()
+        }
+    }
+
 }
