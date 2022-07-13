@@ -20,26 +20,34 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     private val _login = MutableLiveData<ValidationModel>()
     var login: LiveData<ValidationModel> = _login
 
-    // Verifica se o usuário já esta logado.
-    fun verifyLoggedUser() {
+    private val _loggedUser = MutableLiveData<Boolean>()
+    var loggedUser: LiveData<Boolean> = _loggedUser
 
+    // Verifica se o usuário já está logado.
+    fun verifyLoggedUser() {
+        val token = securityPreferences.get(TaskConstants.SHARED.TOKEN_KEY)
+        val personKey = securityPreferences.get(TaskConstants.SHARED.PERSON_KEY)
+        RetrofitClient.addHeaders(token, personKey)
+        _loggedUser.value = (token.isNotEmpty() && personKey.isNotEmpty())
     }
 
     // Faz Login usando a API.
     fun doLogin(email: String, password: String) {
-        personRepository.login(email, password, object : APIListener<PersonModel>{
+        personRepository.login(email, password, object : APIListener<PersonModel> {
             override fun onSuccess(result: PersonModel) {
-                saveHeaders(result)
+                savePreference(result)
                 RetrofitClient.addHeaders(result.token, result.personKey)
                 _login.value = ValidationModel()
             }
+
             override fun onFailure(message: String) {
                 _login.value = ValidationModel(message)
             }
         })
     }
 
-    private fun saveHeaders(result: PersonModel) {
+    // Salva os dados do usuário no SharedPreference.
+    private fun savePreference(result: PersonModel) {
         securityPreferences.store(TaskConstants.SHARED.TOKEN_KEY, result.token)
         securityPreferences.store(TaskConstants.SHARED.PERSON_KEY, result.personKey)
         securityPreferences.store(TaskConstants.SHARED.PERSON_NAME, result.name)
