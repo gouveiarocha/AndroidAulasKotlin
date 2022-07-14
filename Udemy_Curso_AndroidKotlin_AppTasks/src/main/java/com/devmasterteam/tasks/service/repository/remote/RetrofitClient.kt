@@ -1,9 +1,7 @@
 package com.devmasterteam.tasks.service.repository.remote
 
 import com.devmasterteam.tasks.service.constants.TaskConstants
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -44,12 +42,12 @@ class RetrofitClient private constructor() {
         }
 
         // Get com implementação de classe genérica, assim podemos criar serviço com qualquer classe.
-        fun <S> getService(serviceClass: Class<S>): S{
+        fun <S> getService(serviceClass: Class<S>): S {
             return getRetrofitInstance().create(serviceClass)
         }
 
         // Recebe os headers e adiciona nas variaveis.
-        fun addHeaders(tokenValue: String, personKeyValue: String){
+        fun addHeaders(tokenValue: String, personKeyValue: String) {
             token = tokenValue
             personKey = personKeyValue
         }
