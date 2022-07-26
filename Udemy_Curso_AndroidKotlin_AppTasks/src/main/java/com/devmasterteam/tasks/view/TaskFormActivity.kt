@@ -24,21 +24,22 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Variáveis da classe
-        viewModel = ViewModelProvider(this).get(TaskFormViewModel::class.java)
+        // Instancia e Inicializa o Layout com o binding.
         binding = ActivityTaskFormBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Eventos
+        // Instancia e Inicializa a ViewModel.
+        viewModel = ViewModelProvider(this).get(TaskFormViewModel::class.java)
+
+        // Init Click Listener(s).
         binding.buttonSave.setOnClickListener(this)
         binding.buttonDate.setOnClickListener(this)
-
-        viewModel.loadPriorities()
 
         // Init Observer(s).
         observe()
 
-        // Layout
-        setContentView(binding.root)
+        viewModel.loadPriorities()
+
     }
 
     private fun observe() {

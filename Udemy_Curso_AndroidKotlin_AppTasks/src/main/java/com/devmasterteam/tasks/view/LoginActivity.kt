@@ -18,12 +18,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Instancia e Inicializa a ViewModel.
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-
         // Instancia e Inicializa o Layout com o binding.
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Instancia e Inicializa a ViewModel.
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         // Init Click Listener(s).
         binding.buttonLogin.setOnClickListener(this)
