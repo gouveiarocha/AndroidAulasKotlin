@@ -60,10 +60,10 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
 
         viewModel.taskSave.observe(this) {
             if (it.status()) {
-                Toast.makeText(applicationContext, "Sucesso ao Cadastrar!", Toast.LENGTH_LONG).show()
+                showToast("Sucesso ao Cadastrar!")
                 finish()
             } else {
-                Toast.makeText(applicationContext, it.message(), Toast.LENGTH_LONG).show()
+                showToast(it.message())
             }
         }
 
@@ -92,6 +92,10 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
 
         }
         viewModel.save(task)
+    }
+
+    private fun showToast(msg: String){
+        Toast.makeText(applicationContext, msg, Toast.LENGTH_LONG).show()
     }
 
     override fun onClick(v: View) {
