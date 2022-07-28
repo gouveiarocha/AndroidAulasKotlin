@@ -14,6 +14,21 @@ class TaskRepository(val context: Context) : BaseRepository() {
 
     private val remote = RetrofitClient.getService(TaskService::class.java)
 
+    fun list(listener: APIListener<List<TaskModel>>) {
+        val call = remote.list()
+        callList(call, listener)
+    }
+
+    fun listNext(listener: APIListener<List<TaskModel>>) {
+        val call = remote.listNext()
+        callList(call, listener)
+    }
+
+    fun listOverduo(listener: APIListener<List<TaskModel>>) {
+        val call = remote.listOverduo()
+        callList(call, listener)
+    }
+
     fun create(task: TaskModel, listener: APIListener<Boolean>) {
         val call = remote.create(task.priorityId, task.description, task.dueDate, task.complete)
         call.enqueue(object : Callback<Boolean> {
@@ -24,6 +39,23 @@ class TaskRepository(val context: Context) : BaseRepository() {
             override fun onFailure(call: Call<Boolean>, t: Throwable) {
                 listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
             }
+        })
+    }
+
+    // Método para fazer a chamada. Extraido para reutilização.
+    private fun callList(call: Call<List<TaskModel>>, listener: APIListener<List<TaskModel>>) {
+        call.enqueue(object : Callback<List<TaskModel>> {
+            override fun onResponse(
+                call: Call<List<TaskModel>>,
+                response: Response<List<TaskModel>>
+            ) {
+                handleResponse(response, listener)
+            }
+
+            override fun onFailure(call: Call<List<TaskModel>>, t: Throwable) {
+                listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
+            }
+
         })
     }
 
