@@ -8,17 +8,16 @@ import com.devmasterteam.tasks.service.model.PriorityModel
 import com.devmasterteam.tasks.service.repository.local.TaskDatabase
 import com.devmasterteam.tasks.service.repository.remote.PriorityService
 import com.devmasterteam.tasks.service.repository.remote.RetrofitClient
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PriorityRepository(val context: Context) {
+class PriorityRepository(val context: Context) : BaseRepository() {
 
     private val remote = RetrofitClient.getService(PriorityService::class.java)
     private val database = TaskDatabase.getDatabase(context).priorityDAO()
 
-    fun list():List<PriorityModel>{
+    fun list(): List<PriorityModel> {
         return database.list()
     }
 
@@ -46,13 +45,9 @@ class PriorityRepository(val context: Context) {
         })
     }
 
-    fun save(list: List<PriorityModel>){
+    fun save(list: List<PriorityModel>) {
         database.clear()
         database.save(list)
-    }
-
-    private fun failReponseFromJson(jsonString: String): String {
-        return Gson().fromJson(jsonString, String::class.java)
     }
 
 }

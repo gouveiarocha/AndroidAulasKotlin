@@ -7,12 +7,11 @@ import com.devmasterteam.tasks.service.listener.APIListener
 import com.devmasterteam.tasks.service.model.PersonModel
 import com.devmasterteam.tasks.service.repository.remote.PersonService
 import com.devmasterteam.tasks.service.repository.remote.RetrofitClient
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PersonRepository(val context: Context) {
+class PersonRepository(val context: Context) : BaseRepository() {
 
     private val remote = RetrofitClient.getService(PersonService::class.java)
 
@@ -34,10 +33,6 @@ class PersonRepository(val context: Context) {
                 listener.onFailure(context.getString(R.string.ERROR_UNEXPECTED))
             }
         })
-    }
-
-    private fun failReponseFromJson(jsonString: String): String {
-        return Gson().fromJson(jsonString, String::class.java)
     }
 
 }
