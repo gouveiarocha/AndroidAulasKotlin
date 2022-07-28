@@ -2,7 +2,6 @@ package com.devmasterteam.tasks.service.repository
 
 import android.content.Context
 import com.devmasterteam.tasks.R
-import com.devmasterteam.tasks.service.constants.TaskConstants
 import com.devmasterteam.tasks.service.listener.APIListener
 import com.devmasterteam.tasks.service.model.TaskModel
 import com.devmasterteam.tasks.service.repository.remote.RetrofitClient
@@ -19,13 +18,7 @@ class TaskRepository(val context: Context) : BaseRepository() {
         val call = remote.create(task.priorityId, task.description, task.dueDate, task.complete)
         call.enqueue(object : Callback<Boolean> {
             override fun onResponse(call: Call<Boolean>, response: Response<Boolean>) {
-                if (response.code() == TaskConstants.HTTP.SUCCESS) {
-                    response.body()?.let {
-                        listener.onSuccess(it)
-                    }
-                } else {
-                    listener.onFailure(failReponseFromJson(response.errorBody()!!.string()))
-                }
+                handleResponse(response, listener)
             }
 
             override fun onFailure(call: Call<Boolean>, t: Throwable) {
