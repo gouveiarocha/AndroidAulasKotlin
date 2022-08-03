@@ -13,6 +13,25 @@ import retrofit2.Response
 
 class PriorityRepository(val context: Context) : BaseRepository() {
 
+    companion object {
+        private val cache = mutableMapOf<Int, String>()
+        private fun getDescriptionCache(id: Int): String {
+            return cache[id] ?: ""
+        }
+        fun setDescriptionCache(id: Int, str: String){
+            cache[id] = str
+        }
+    }
+
+    fun getDescription(id: Int): String {
+        val descriptionCache = getDescriptionCache(id)
+        return descriptionCache.ifEmpty {
+            val description = database.getDescription(id)
+            setDescriptionCache(id, description)
+            description
+        }
+    }
+
     private val remote = RetrofitClient.getService(PriorityService::class.java)
     private val database = TaskDatabase.getDatabase(context).priorityDAO()
 
