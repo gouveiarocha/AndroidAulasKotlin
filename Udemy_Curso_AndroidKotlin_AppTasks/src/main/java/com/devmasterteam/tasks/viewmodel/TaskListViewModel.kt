@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.devmasterteam.tasks.service.listener.APIListener
 import com.devmasterteam.tasks.service.model.TaskModel
+import com.devmasterteam.tasks.service.model.ValidationModel
 import com.devmasterteam.tasks.service.repository.PriorityRepository
 import com.devmasterteam.tasks.service.repository.TaskRepository
 
@@ -16,6 +17,9 @@ class TaskListViewModel(application: Application) : AndroidViewModel(application
 
     private val _tasks = MutableLiveData<List<TaskModel>>()
     var tasks: LiveData<List<TaskModel>> = _tasks
+
+    private val _delete = MutableLiveData<ValidationModel>()
+    var delete: LiveData<ValidationModel> = _delete
 
     fun list() {
         taskRepository.list(object : APIListener<List<TaskModel>> {
@@ -28,6 +32,20 @@ class TaskListViewModel(application: Application) : AndroidViewModel(application
 
             override fun onFailure(message: String) {
                 TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+    fun delete(id: Int) {
+        taskRepository.delete(id, object : APIListener<Boolean>{
+            override fun onSuccess(result: Boolean) {
+                list()
+                _delete.value = ValidationModel()
+            }
+
+            override fun onFailure(message: String) {
+                _delete.value = ValidationModel(message)
             }
 
         })

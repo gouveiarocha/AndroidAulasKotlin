@@ -6,7 +6,6 @@ import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.databinding.RowTaskListBinding
 import com.devmasterteam.tasks.service.listener.TaskListener
 import com.devmasterteam.tasks.service.model.TaskModel
-import com.devmasterteam.tasks.service.repository.PriorityRepository
 import java.text.SimpleDateFormat
 
 class TaskViewHolder(private val itemBinding: RowTaskListBinding, val listener: TaskListener) :
@@ -34,7 +33,7 @@ class TaskViewHolder(private val itemBinding: RowTaskListBinding, val listener: 
         // Click Events.
         itemBinding.textDescription.setOnClickListener { listener.onListClick(task.id) }
         itemBinding.imageTask.setOnClickListener {
-            if (task.complete){
+            if (task.complete) {
                 listener.onUndoClick(task.id)
             } else {
                 listener.onCompleteClick(task.id)
