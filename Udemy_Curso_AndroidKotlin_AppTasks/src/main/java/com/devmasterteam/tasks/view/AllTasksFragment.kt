@@ -60,6 +60,13 @@ class AllTasksFragment : Fragment() {
             }
         }
 
+        viewModel.status.observe(viewLifecycleOwner){
+            when (it.status()) {
+                true -> Toast.makeText(context, "Tarefa Atualizada!!!", Toast.LENGTH_SHORT).show()
+                false -> Toast.makeText(context, it.message(), Toast.LENGTH_LONG).show()
+            }
+        }
+
     }
 
     private fun initListener() {
@@ -73,11 +80,11 @@ class AllTasksFragment : Fragment() {
             }
 
             override fun onCompleteClick(id: Int) {
-                TODO("Not yet implemented")
+                viewModel.status(id, true)
             }
 
             override fun onUndoClick(id: Int) {
-                TODO("Not yet implemented")
+                viewModel.status(id, false)
             }
         }
         adapter.attachListener(listener)
