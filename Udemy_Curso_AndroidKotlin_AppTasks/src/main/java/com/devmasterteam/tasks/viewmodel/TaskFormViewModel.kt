@@ -22,14 +22,34 @@ class TaskFormViewModel(application: Application) : AndroidViewModel(application
     private val _taskSave = MutableLiveData<ValidationModel>()
     var taskSave: LiveData<ValidationModel> = _taskSave
 
+    private val _task = MutableLiveData<TaskModel>()
+    var task: LiveData<TaskModel> = _task
+
     fun save(task: TaskModel) {
-        taskRepository.create(task, object : APIListener<Boolean> {
+        val listener = object : APIListener<Boolean> {
             override fun onSuccess(result: Boolean) {
                 _taskSave.value = ValidationModel()
             }
 
             override fun onFailure(message: String) {
                 _taskSave.value = ValidationModel(message)
+            }
+
+        }
+        when (task.id) {
+            0 -> taskRepository.create(task, listener)
+            else -> taskRepository.update(task, listener)
+        }
+    }
+
+    fun loadTask(id: Int) {
+        taskRepository.load(id, object : APIListener<TaskModel> {
+            override fun onSuccess(result: TaskModel) {
+                _task.value = result
+            }
+
+            override fun onFailure(message: String) {
+                TODO("Not yet implemented")
             }
 
         })

@@ -26,8 +26,17 @@ class TaskRepository(context: Context) : BaseRepository(context) {
         executeCall(remote.listOverduo(), listener)
     }
 
+    fun load(id: Int, listener: APIListener<TaskModel>) {
+        executeCall(remote.load(id), listener)
+    }
+
     fun create(task: TaskModel, listener: APIListener<Boolean>) {
         val call = remote.create(task.priorityId, task.description, task.dueDate, task.complete)
+        executeCall(call, listener)
+    }
+
+    fun update(task: TaskModel, listener: APIListener<Boolean>) {
+        val call = remote.update(task.id, task.priorityId, task.description, task.dueDate, task.complete)
         executeCall(call, listener)
     }
 

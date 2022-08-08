@@ -19,7 +19,7 @@ interface TaskService {
     // No caso abaixo, devemos passar um id no endpoint - portanto, usamos a URL conforme abaixo e
     // mapeamos usando o @Path. O encoded corrige automaticamente urls que contiver espaços e\ou
     // caracteres especiais.
-    @GET("Task/{}")
+    @GET("Task/{id}")
     fun load(@Path(value = "id", encoded = true) id: Int): Call<TaskModel>
 
     // Inserir Tarefa.

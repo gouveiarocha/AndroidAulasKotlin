@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.databinding.ActivityTaskFormBinding
+import com.devmasterteam.tasks.service.constants.TaskConstants
 import com.devmasterteam.tasks.service.model.PriorityModel
 import com.devmasterteam.tasks.service.model.TaskModel
 import com.devmasterteam.tasks.viewmodel.TaskFormViewModel
@@ -24,6 +25,7 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
 
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy")
     private var listPriority: List<PriorityModel> = mutableListOf()
+    private var taskIdentification = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +41,23 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
         binding.buttonSave.setOnClickListener(this)
         binding.buttonDate.setOnClickListener(this)
 
+        // Load Bundle Data
+        loadDataFromActivity()
+
         // Init Observer(s).
         observe()
 
         viewModel.loadPriorities()
 
+    }
+
+    private fun loadDataFromActivity() {
+        val bundle = intent.extras
+        if (bundle != null) {
+            binding.buttonSave.text = "Salvar Tarefa"
+            taskIdentification = bundle.getInt(TaskConstants.BUNDLE.TASKID)
+            viewModel.loadTask(taskIdentification)
+        }
     }
 
     private fun observe() {
@@ -60,11 +74,26 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
 
         viewModel.taskSave.observe(this) {
             if (it.status()) {
-                showToast("Sucesso ao Cadastrar!")
+                if (taskIdentification == 0){
+                    showToast("Sucesso ao Cadastrar nova Tarefa!")
+                }else{
+                    showToast("Sucesso ao Atualizar Tarefa!")
+                }
                 finish()
             } else {
                 showToast(it.message())
             }
+        }
+
+        viewModel.task.observe(this) {
+            binding.editDescription.setText(it.description)
+            binding.spinnerPriority.setSelection(getIndex(it.priorityId))
+            binding.checkComplete.isChecked = it.complete
+
+            val date = SimpleDateFormat("yyyy-MM-dd").parse(it.dueDate)
+            val dateFormated = SimpleDateFormat("dd/MM/yyyy").format(date)
+            binding.buttonDate.text = dateFormated
+
         }
 
     }
@@ -79,7 +108,7 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
 
     private fun handleSave() {
         val task = TaskModel().apply {
-            this.id = 0
+            this.id = taskIdentification
             this.description = binding.editDescription.text.toString()
 
             // Tratamento para pegar o item selecionado do Spinner. Importante usar index.
@@ -94,8 +123,19 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
         viewModel.save(task)
     }
 
-    private fun showToast(msg: String){
-        Toast.makeText(applicationContext, msg, Toast.LENGTH_LONG).show()
+    private fun getIndex(id: Int): Int {
+        var index = 0
+        for (l in listPriority) {
+            if (l.id == id) {
+                break
+            }
+            index++
+        }
+        return index
+    }
+
+    private fun showToast(msg: String) {
+        Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
     }
 
     override fun onClick(v: View) {
