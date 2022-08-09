@@ -15,7 +15,7 @@ import com.devmasterteam.tasks.service.listener.TaskListener
 import com.devmasterteam.tasks.view.adapter.TaskAdapter
 import com.devmasterteam.tasks.viewmodel.TaskListViewModel
 
-class AllTasksFragment : Fragment() {
+class TasksFragment : Fragment() {
 
     private lateinit var viewModel: TaskListViewModel
     private var _binding: FragmentAllTasksBinding? = null
