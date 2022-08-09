@@ -22,6 +22,7 @@ class AllTasksFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val adapter = TaskAdapter()
+    private var taskfilter = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, b: Bundle?): View {
         viewModel = ViewModelProvider(this).get(TaskListViewModel::class.java)
@@ -29,6 +30,9 @@ class AllTasksFragment : Fragment() {
 
         binding.recyclerAllTasks.layoutManager = LinearLayoutManager(context)
         binding.recyclerAllTasks.adapter = adapter
+
+        // Atribuir nosso taskfilter. Utilizado para tratar a navegação entre os filtros de tarefas.
+        taskfilter = requireArguments().getInt(TaskConstants.BUNDLE.TASKFILTER, 0)
 
         // Método para instanciar o listener e passar para o Adapter.
         initListener()
@@ -41,7 +45,7 @@ class AllTasksFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.list()
+        viewModel.list(taskfilter)
     }
 
     override fun onDestroyView() {
