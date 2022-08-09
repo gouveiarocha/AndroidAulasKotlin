@@ -57,12 +57,13 @@ class AllTasksFragment : Fragment() {
 
         viewModel.delete.observe(viewLifecycleOwner) {
             when (it.status()) {
-                true -> Toast.makeText(context, "Tarefa deletada com sucesso!!!", Toast.LENGTH_LONG).show()
+                true -> Toast.makeText(context, "Tarefa deletada com sucesso!!!", Toast.LENGTH_LONG)
+                    .show()
                 false -> Toast.makeText(context, it.message(), Toast.LENGTH_LONG).show()
             }
         }
 
-        viewModel.status.observe(viewLifecycleOwner){
+        viewModel.status.observe(viewLifecycleOwner) {
             when (it.status()) {
                 true -> Toast.makeText(context, "Tarefa Atualizada!!!", Toast.LENGTH_SHORT).show()
                 false -> Toast.makeText(context, it.message(), Toast.LENGTH_LONG).show()

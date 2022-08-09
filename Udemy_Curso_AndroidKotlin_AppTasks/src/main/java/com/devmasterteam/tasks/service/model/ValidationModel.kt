@@ -14,7 +14,7 @@ class ValidationModel(message: String = "") {
     private var validationMessage: String = ""
 
     init {
-        if (message != ""){
+        if (message != "") {
             validationMessage = message
             status = false
         }

@@ -1,6 +1,7 @@
 package com.devmasterteam.tasks.viewmodel
 
 import android.app.Application
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,7 +13,6 @@ import com.devmasterteam.tasks.service.model.ValidationModel
 import com.devmasterteam.tasks.service.repository.PersonRepository
 import com.devmasterteam.tasks.service.repository.PriorityRepository
 import com.devmasterteam.tasks.service.repository.SecurityPreferences
-import com.devmasterteam.tasks.service.repository.local.PriorityDAO
 import com.devmasterteam.tasks.service.repository.remote.RetrofitClient
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
@@ -41,13 +41,13 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
         // Baixando a lista de prioridades.
         if (!logged) {
-            priorityRepository.list(object : APIListener<List<PriorityModel>>{
+            priorityRepository.list(object : APIListener<List<PriorityModel>> {
                 override fun onSuccess(result: List<PriorityModel>) {
                     priorityRepository.save(result)
                 }
 
                 override fun onFailure(message: String) {
-
+                    Toast.makeText(getApplication(), message, Toast.LENGTH_SHORT).show()
                 }
             })
         }

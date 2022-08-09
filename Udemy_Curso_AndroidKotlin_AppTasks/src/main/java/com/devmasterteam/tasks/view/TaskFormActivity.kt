@@ -74,9 +74,9 @@ class TaskFormActivity : AppCompatActivity(), View.OnClickListener,
 
         viewModel.taskSave.observe(this) {
             if (it.status()) {
-                if (taskIdentification == 0){
+                if (taskIdentification == 0) {
                     showToast("Sucesso ao Cadastrar nova Tarefa!")
-                }else{
+                } else {
                     showToast("Sucesso ao Atualizar Tarefa!")
                 }
                 finish()
