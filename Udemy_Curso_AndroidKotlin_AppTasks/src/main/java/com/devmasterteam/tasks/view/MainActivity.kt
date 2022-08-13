@@ -3,19 +3,22 @@ package com.devmasterteam.tasks.view
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.databinding.ActivityMainBinding
+import com.devmasterteam.tasks.viewmodel.LoginViewModel
+import com.devmasterteam.tasks.viewmodel.MainViewModel
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         // Instancia e Inicializa o Layout com o binding.
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Instancia e Inicializa a ViewModel.
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
@@ -57,6 +63,21 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.setNavigationItemSelectedListener {
+            //trata o item que queremos...
+            if (it.itemId == R.id.nav_logout){
+                viewModel.logout()
+                startActivity(Intent(applicationContext, LoginActivity::class.java))
+                finish()
+            } else {
+                //mantém a navegação nos demais itens do drawer...
+                NavigationUI.onNavDestinationSelected(it, navController)
+                drawerLayout.closeDrawer(GravityCompat.START)
+            }
+            true
+        }
+
     }
 
     private fun observe() {
