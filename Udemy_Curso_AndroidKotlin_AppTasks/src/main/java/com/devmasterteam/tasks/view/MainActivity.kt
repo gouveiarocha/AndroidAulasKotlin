@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Instancia e Inicializa o Layout com o binding.
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -33,8 +34,9 @@ class MainActivity : AppCompatActivity() {
         // Navegação
         setupNavigation()
 
-        // Observadores
+        // Init Observer(s).
         observe()
+
     }
 
     override fun onResume() {
@@ -60,4 +62,5 @@ class MainActivity : AppCompatActivity() {
     private fun observe() {
 
     }
+
 }
