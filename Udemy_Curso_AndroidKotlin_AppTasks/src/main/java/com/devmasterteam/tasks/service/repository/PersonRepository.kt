@@ -10,6 +10,10 @@ class PersonRepository(context: Context) : BaseRepository(context) {
 
     private val remote = RetrofitClient.getService(PersonService::class.java)
 
+    fun create(name: String, email: String, password: String, listener: APIListener<PersonModel>) {
+        executeCall(remote.create(name, email, password), listener)
+    }
+
     fun login(email: String, password: String, listener: APIListener<PersonModel>) {
         executeCall(remote.login(email, password), listener)
     }

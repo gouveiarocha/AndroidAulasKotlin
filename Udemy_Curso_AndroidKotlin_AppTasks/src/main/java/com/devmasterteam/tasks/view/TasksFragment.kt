@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.devmasterteam.tasks.databinding.FragmentAllTasksBinding
+import com.devmasterteam.tasks.databinding.FragmentTasksBinding
 import com.devmasterteam.tasks.service.constants.TaskConstants
 import com.devmasterteam.tasks.service.listener.TaskListener
 import com.devmasterteam.tasks.view.adapter.TaskAdapter
@@ -18,7 +18,7 @@ import com.devmasterteam.tasks.viewmodel.TaskListViewModel
 class TasksFragment : Fragment() {
 
     private lateinit var viewModel: TaskListViewModel
-    private var _binding: FragmentAllTasksBinding? = null
+    private var _binding: FragmentTasksBinding? = null
     private val binding get() = _binding!!
 
     private val adapter = TaskAdapter()
@@ -26,7 +26,7 @@ class TasksFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, b: Bundle?): View {
         viewModel = ViewModelProvider(this).get(TaskListViewModel::class.java)
-        _binding = FragmentAllTasksBinding.inflate(inflater, container, false)
+        _binding = FragmentTasksBinding.inflate(inflater, container, false)
 
         binding.recyclerAllTasks.layoutManager = LinearLayoutManager(context)
         binding.recyclerAllTasks.adapter = adapter
