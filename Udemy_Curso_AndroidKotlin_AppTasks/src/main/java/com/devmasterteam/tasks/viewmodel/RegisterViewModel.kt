@@ -20,6 +20,7 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
     private val _user = MutableLiveData<ValidationModel>()
     var user: LiveData<ValidationModel> = _user
 
+    // Cria o Usuario usando a API.
     fun doCreate(name: String, email: String, password: String) {
         personRepository.create(name, email, password, object : APIListener<PersonModel> {
             override fun onSuccess(result: PersonModel) {

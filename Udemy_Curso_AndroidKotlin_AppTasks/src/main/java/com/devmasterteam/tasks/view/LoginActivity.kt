@@ -53,18 +53,20 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.button_login ->
+                handleLogin()
+            R.id.text_register ->
+                startActivity(Intent(applicationContext, RegisterActivity::class.java))
+            else -> return
+        }
+    }
+
     private fun handleLogin() {
         val email = binding.editEmail.text.toString()
         val password = binding.editPassword.text.toString()
         viewModel.doLogin(email, password)
-    }
-
-    override fun onClick(v: View) {
-        if (v.id == R.id.button_login) {
-            handleLogin()
-        } else if(v.id == R.id.text_register) {
-            startActivity(Intent(applicationContext, RegisterActivity::class.java))
-        }
     }
 
 }

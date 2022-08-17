@@ -18,17 +18,19 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Variáveis da classe
-        viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
+        // Instancia e Inicializa o Layout com o binding.
         binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Eventos
+        // Instancia e Inicializa a ViewModel.
+        viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
+
+        // Init Click Listener(s).
         binding.buttonSave.setOnClickListener(this)
 
+        // Init Observer(s).
         observer()
 
-        // Layout
-        setContentView(binding.root)
     }
 
     private fun observer() {
