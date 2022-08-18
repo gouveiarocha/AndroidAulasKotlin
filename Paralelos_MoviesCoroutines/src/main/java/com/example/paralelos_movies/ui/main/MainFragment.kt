@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.paralelos_movies.databinding.MainFragmentBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
 
@@ -14,7 +14,8 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    //private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by viewModel()
 
     private var _binding: MainFragmentBinding? = null
     private val binding: MainFragmentBinding get() = _binding!!
@@ -34,10 +35,10 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel = ViewModelProvider(
-            this,
-            MainViewModel.MainViewModelFactory(MainRepository())
-        ).get(MainViewModel::class.java)
+//        viewModel = ViewModelProvider(
+//            this,
+//            MainViewModel.MainViewModelFactory(MainRepository())
+//        ).get(MainViewModel::class.java)
 
         viewModel.moviesLiveData.observe(viewLifecycleOwner) { movies ->
             binding.textViewFilmes.text = movies[0].title
