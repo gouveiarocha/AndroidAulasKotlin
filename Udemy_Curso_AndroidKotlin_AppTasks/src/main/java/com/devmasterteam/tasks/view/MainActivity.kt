@@ -2,6 +2,7 @@ package com.devmasterteam.tasks.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -10,7 +11,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.devmasterteam.tasks.R
 import com.devmasterteam.tasks.databinding.ActivityMainBinding
-import com.devmasterteam.tasks.viewmodel.LoginViewModel
 import com.devmasterteam.tasks.viewmodel.MainViewModel
 import com.google.android.material.navigation.NavigationView
 
@@ -40,13 +40,11 @@ class MainActivity : AppCompatActivity() {
         // Navegação
         setupNavigation()
 
+        viewModel.loadUserName()
+
         // Init Observer(s).
         observe()
 
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -66,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             //trata o item que queremos...
-            if (it.itemId == R.id.nav_logout){
+            if (it.itemId == R.id.nav_logout) {
                 viewModel.logout()
                 startActivity(Intent(applicationContext, LoginActivity::class.java))
                 finish()
@@ -81,7 +79,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observe() {
-
+        viewModel.name.observe(this) {
+            val header = binding.navView.getHeaderView(0)
+            header.findViewById<TextView>(R.id.text_name).text = it
+        }
     }
 
 }
