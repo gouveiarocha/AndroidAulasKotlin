@@ -1,5 +1,6 @@
 package com.example.paralelos
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -12,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.paralelos.databinding.ActivityMainBinding
+import com.example.paralelos.estudos.callbacks.EstudoCallback
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +44,9 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        startActivity(Intent(this, EstudoCallback::class.java) )
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
