@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".studies.Callback.StudyCallback">
+    tools:context=".studies.Callback.StudyCallbackActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

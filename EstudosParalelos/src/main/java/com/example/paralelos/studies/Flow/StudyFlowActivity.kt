@@ -7,7 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.paralelos.databinding.ActivityStudyFlowBinding
 import kotlinx.coroutines.launch
 
-class StudyFlow : AppCompatActivity() {
+class StudyFlowActivity : AppCompatActivity() {
 
     private val viewModel by viewModels<StudyFlowViewModel>()
     private val studyFlowAdapter = StudyFlowAdapter()

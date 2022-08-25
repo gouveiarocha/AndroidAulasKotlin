@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidEstudosKotlin">
         <activity
-            android:name=".studies.Flow.StudyFlow"
+            android:name=".studies.Flow.StudyFlowActivity"
             android:exported="false" />
         <activity
-            android:name=".studies.Callback.StudyCallback"
+            android:name=".studies.Callback.StudyCallbackActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

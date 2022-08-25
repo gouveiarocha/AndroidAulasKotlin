@@ -13,7 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.paralelos.databinding.ActivityMainBinding
-import com.example.paralelos.studies.Flow.StudyFlow
+import com.example.paralelos.studies.Flow.StudyFlowActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        startActivity(Intent(this, StudyFlow::class.java) )
+        startActivity(Intent(this, StudyFlowActivity::class.java) )
 
     }
 
