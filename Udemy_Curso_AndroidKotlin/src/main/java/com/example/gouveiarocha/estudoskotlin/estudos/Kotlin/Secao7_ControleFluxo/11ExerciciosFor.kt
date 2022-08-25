@@ -4,7 +4,7 @@ fun main() {
     exercicios(5, 5)
 }
 
-fun exercicios(numeroExercicio: Int, tamanhoEscada: Int = 0) {
+private fun exercicios(numeroExercicio: Int, tamanhoEscada: Int = 0) {
     when (numeroExercicio) {
         1 -> {
             for (i in 1..50) {
