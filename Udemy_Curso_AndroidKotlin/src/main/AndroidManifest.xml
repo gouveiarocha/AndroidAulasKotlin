@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin">
-        <activity android:name=".estudos.Layouts_Secoes_19_25_32.EstudoLinearLayout"></activity>
+        <activity
+            android:name=".estudos.Fingerprint.StudyFingerprintActivity"
+            android:exported="false" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.EstudoLinearLayout" />
         <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio2" />
         <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio1" />
         <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutChain" />
