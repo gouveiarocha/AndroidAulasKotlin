@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.devmasterteam.tasks.service.constants.TaskConstants
+import com.devmasterteam.tasks.service.helper.BiometricHelper
 import com.devmasterteam.tasks.service.listener.APIListener
 import com.devmasterteam.tasks.service.model.PersonModel
 import com.devmasterteam.tasks.service.model.PriorityModel
@@ -28,7 +29,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     var loggedUser: LiveData<Boolean> = _loggedUser
 
     // Verifica se o usuário já está logado.
-    fun verifyLoggedUser() {
+    fun verifyAuthentication() {
 
         val token = securityPreferences.get(TaskConstants.SHARED.TOKEN_KEY)
         val personKey = securityPreferences.get(TaskConstants.SHARED.PERSON_KEY)
@@ -36,7 +37,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         RetrofitClient.addHeaders(token, personKey)
 
         val logged = (token.isNotEmpty() && personKey.isNotEmpty())
-        _loggedUser.value = logged
+        //_loggedUser.value = logged
 
         // Baixando a lista de prioridades.
         if (!logged) {
@@ -50,6 +51,10 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                 }
             })
         }
+
+
+        _loggedUser.value = (logged && BiometricHelper.isBiometricAvailable(getApplication()))
+
 
     }
 
