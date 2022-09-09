@@ -1,11 +1,13 @@
 package com.example.gouveiarocha.estudoskotlin.estudos.Elementos_Secoes_19_38
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gouveiarocha.estudoskotlin.R
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_study_elements2.*
 
 class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener {
@@ -15,6 +17,7 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener {
 
         btn_toast_test.setOnClickListener(this)
         btn_toast_test_cust.setOnClickListener(this)
+        btn_snack_test.setOnClickListener(this)
 
     }
 
@@ -40,12 +43,29 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener {
 
                 toast.show()
             }
+            R.id.btn_snack_test -> {
+                snack("Teste Snack!!!")
+            }
 
         }
     }
 
     private fun toast(str: String) {
         Toast.makeText(this, str, Toast.LENGTH_LONG).show()
+    }
+
+    private fun snack(str: String) {
+        // Cria a Snack, observar que obrigatoriamente precisa de um Layout pai. No Caso o linear_root.
+        val snack = Snackbar.make(linear_root, str, Snackbar.LENGTH_LONG)
+        // Cria ação no Snack.
+        snack.setAction("Desfazer", View.OnClickListener {
+            toast("Desfeito...")
+        })
+        // Customiza cores.
+        snack.setActionTextColor(Color.BLUE)
+        snack.setBackgroundTint(Color.LTGRAY)
+
+        snack.show()
     }
 
 }
