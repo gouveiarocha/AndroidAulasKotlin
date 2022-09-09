@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".studies.Layouts_Secoes_19_25_32.EstudoLinearLayout">
+    tools:context=".estudos.Layouts_Secoes_19_25_32.EstudoLinearLayout">
 
     <TextView
         android:layout_width="wrap_content"

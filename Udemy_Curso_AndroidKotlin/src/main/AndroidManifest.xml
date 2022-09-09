@@ -12,31 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppAulasKotlin" >
         <activity
-            android:name=".studies.Elementos_Secoes_19_38.StudyElementsActivity2"
+            android:name=".estudos.Elementos_Secoes_19_38.StudyElementsActivity2"
             android:exported="false" />
         <activity
-            android:name=".studies.Componentes_Secao38.ComponentesActivity"
+            android:name=".estudos.Componentes_Secao38.ComponentesActivity"
             android:exported="false" />
         <activity
-            android:name=".studies.Fingerprint.StudyFingerprintActivity"
+            android:name=".estudos.Fingerprint.StudyFingerprintActivity"
             android:exported="false" />
-        <activity android:name=".studies.Layouts_Secoes_19_25_32.EstudoLinearLayout" />
-        <activity android:name=".studies.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio2" />
-        <activity android:name=".studies.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio1" />
-        <activity android:name=".studies.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutChain" />
-        <activity android:name=".studies.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayout" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.EstudoLinearLayout" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio2" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio1" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutChain" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayout" />
         <activity android:name=".apps.Motivation.ui.AppMotivationMain" />
         <activity android:name=".apps.Motivation.ui.AppMotivationHome" />
-        <activity android:name=".studies.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayoutExercicio" />
-        <activity android:name=".studies.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayout" />
-        <activity android:name=".studies.Elementos_Secoes_19_38.StudyElementsActivity1" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayoutExercicio" />
+        <activity android:name=".estudos.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayout" />
+        <activity android:name=".estudos.Elementos_Secoes_19_38.StudyElementsActivity1" />
         <activity android:name=".apps.GastoViagem.AppGastoViagem" />
         <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_HomeActvity" />
         <activity android:name=".Paralelos.Estudos.ActForResult.SecondScreen" />
         <activity android:name=".Paralelos.Estudos.ActForResult.FirstScreen" />
         <activity android:name=".Paralelos.Estudos.LoginMVP.activitys.LoginMVP_LoginActivity" />
-        <activity android:name=".studies.MVVM.MVVMActivity" />
-        <activity android:name=".studies.API_Retrofit.APIRetrofit" />
+        <activity android:name=".estudos.MVVM.MVVMActivity" />
+        <activity android:name=".estudos.API_Retrofit.APIRetrofit" />
         <activity android:name=".Paralelos.Apps.Jokenpo.AppJokenpo" />
         <activity
             android:name=".MainActivity"

@@ -3,7 +3,7 @@ package com.example.gouveiarocha.estudoskotlin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.gouveiarocha.estudoskotlin.studies.Fingerprint.StudyFingerprintActivity
+import com.example.gouveiarocha.estudoskotlin.estudos.Fingerprint.StudyFingerprintActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

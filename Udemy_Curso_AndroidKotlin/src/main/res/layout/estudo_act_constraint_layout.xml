@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".studies.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayout">
+    tools:context=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayout">
 
     <Button
         android:id="@+id/estudoconstraintlayout_btn_teste1"
