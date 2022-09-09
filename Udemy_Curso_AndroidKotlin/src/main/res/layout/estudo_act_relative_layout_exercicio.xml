@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_200"
-    tools:context=".estudos.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayoutExercicio">
+    tools:context=".studies.Layouts_Secoes_19_25_32.RelativeLayout.EstudoRelativeLayoutExercicio">
 
     <EditText
         android:id="@+id/exerciciorelativelayout_edit_email"

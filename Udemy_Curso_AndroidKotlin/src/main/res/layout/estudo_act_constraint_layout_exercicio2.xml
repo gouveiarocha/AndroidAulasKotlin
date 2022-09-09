@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".estudos.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio2">
+    tools:context=".studies.Layouts_Secoes_19_25_32.ConstraintLayout.EstudoConstraintLayoutExercicio2">
 
     <View
         android:id="@+id/estudoconstraintlayoutex2_view_header"

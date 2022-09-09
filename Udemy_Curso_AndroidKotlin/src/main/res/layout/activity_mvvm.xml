@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".estudos.MVVM.MVVMActivity">
+    tools:context=".studies.MVVM.MVVMActivity">
 
     <TextView
         android:id="@+id/textWelcome"
