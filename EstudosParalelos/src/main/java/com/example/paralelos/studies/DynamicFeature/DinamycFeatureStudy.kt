@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.paralelos.BuildConfig
 import com.example.paralelos.R
@@ -19,28 +20,31 @@ class DinamycFeatureStudy : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dinamyc_feature_study)
 
+        // Cria um Install Request.
         val moduleRequest = SplitInstallRequest
             .newBuilder()
             .addModule("EstudosParalelos_DynamicFeature")
             .build()
 
+        // Criar um Factory.
         val splitManager = SplitInstallManagerFactory.create(this)
+
+        // Usa o Factory para baixar o módulo, usando o Install Request.
         splitManager.startInstall(moduleRequest)
-            // Callback de sucesso
+            // Callback de Sucesso.
             .addOnSuccessListener {
 
             }
-            // Callback de erro
+            // Callback de Erro.
             .addOnFailureListener {
 
             }
-            // Callback para quando o processo for finalizado (com erro ou com sucesso)
+            // Callback para quando o processo for finalizado (Com erro ou com sucesso).
             .addOnCompleteListener {
 
             }
 
-
-
+        // Cria o Listener
         val listener = SplitInstallStateUpdatedListener { state ->
 
             state.moduleNames().joinToString(" - ")
@@ -78,7 +82,7 @@ class DinamycFeatureStudy : AppCompatActivity() {
             }
         }
 
-        // Registrando o listener
+        // Registra o Listener
         splitManager.registerListener(listener)
 
         // Abrindo Activity do Módulo.
@@ -86,6 +90,13 @@ class DinamycFeatureStudy : AppCompatActivity() {
             val i = Intent()
             i.setClassName(BuildConfig.APPLICATION_ID, "com.example.estudo_dynamicfeature.MainActivity")
             startActivity(i)
+        }
+
+        // Instanciar classes do Módulo.
+        if (splitManager.installedModules.contains("EstudosParalelos_DynamicFeature")) {
+            val cls = Class.forName("com.example.estudo_dynamicfeature.ClassExample")
+            val featureClass = cls.getConstructor().newInstance() as InterfaceExample
+            featureClass.exampleTest()
         }
 
     }
