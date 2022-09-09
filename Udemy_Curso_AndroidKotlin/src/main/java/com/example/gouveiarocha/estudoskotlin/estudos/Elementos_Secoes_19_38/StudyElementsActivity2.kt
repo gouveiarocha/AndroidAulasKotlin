@@ -15,9 +15,7 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_study_elements2)
 
-        btn_toast_test.setOnClickListener(this)
-        btn_toast_test_cust.setOnClickListener(this)
-        btn_snack_test.setOnClickListener(this)
+        initElements()
 
     }
 
@@ -66,6 +64,12 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener {
         snack.setBackgroundTint(Color.LTGRAY)
 
         snack.show()
+    }
+
+    private fun initElements(){
+        btn_toast_test.setOnClickListener(this)
+        btn_toast_test_cust.setOnClickListener(this)
+        btn_snack_test.setOnClickListener(this)
     }
 
 }
