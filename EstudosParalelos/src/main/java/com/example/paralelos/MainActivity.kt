@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.paralelos.databinding.ActivityMainBinding
 import com.example.paralelos.studies.DynamicFeature.DinamycFeatureStudy
 import com.example.paralelos.studies.Flow.StudyFlowActivity
+import com.example.paralelos.studies.RecyclerView.StudyRecyclerViewActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        startActivity(Intent(this, DinamycFeatureStudy::class.java))
+        startActivity(Intent(this, StudyRecyclerViewActivity::class.java))
 
     }
 
