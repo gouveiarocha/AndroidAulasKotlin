@@ -25,4 +25,11 @@
     <string name="app_motivation_frases_de_motivacao">Frases de motivação</string>
     <string name="app_motivation_frases_para_manha">Frases para manhã</string>
 
+    <string-array name="spinner_test_values">
+        <item>Gramas</item>
+        <item>Kg</item>
+        <item>Arroba</item>
+        <item>Tonelada</item>
+    </string-array>
+
 </resources>
