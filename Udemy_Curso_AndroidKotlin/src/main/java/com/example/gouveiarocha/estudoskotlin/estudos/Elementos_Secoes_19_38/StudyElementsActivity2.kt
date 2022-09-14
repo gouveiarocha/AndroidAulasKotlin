@@ -8,7 +8,6 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.size
 import com.example.gouveiarocha.estudoskotlin.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_study_elements2.*
@@ -26,7 +25,6 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
 
     override fun onClick(v: View) {
         when (v.id) {
-
             R.id.btn_toast_test -> {
                 showToast("Teste Toast")
             }
@@ -59,7 +57,6 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
                 // Só aceita o set pelo ID
                 spinner_static_test.setSelection(3)
             }
-
         }
     }
 
@@ -116,7 +113,12 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
     }
 
     private fun loadDynamicSpinner() {
-        val mList = listOf("Gramas Spinner Dinamico", "Kg Spinner Dinamico", "Arroba Spinner Dinamico", "Tonelada Spinner Dinamico")
+        val mList = listOf(
+            "Gramas Spinner Dinamico",
+            "Kg Spinner Dinamico",
+            "Arroba Spinner Dinamico",
+            "Tonelada Spinner Dinamico"
+        )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, mList)
         spinner_dynamic_test.adapter = adapter
     }
