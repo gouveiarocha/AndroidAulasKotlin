@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         startActivity(Intent(this, StudyRecyclerViewActivity::class.java))
-        // TESTE!!!!
 
     }
 
