@@ -231,6 +231,30 @@
 
         </LinearLayout>
 
+        <!--ProgressBar-->
+        <ProgressBar
+            android:id="@+id/progress_default_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <ProgressBar
+            android:id="@+id/progress_linear_test"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:indeterminate="true" />
+
+        <Button
+            android:id="@+id/btn_stop_progress_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="PROGRESS STOP" />
+
     </LinearLayout>
 
 </ScrollView>

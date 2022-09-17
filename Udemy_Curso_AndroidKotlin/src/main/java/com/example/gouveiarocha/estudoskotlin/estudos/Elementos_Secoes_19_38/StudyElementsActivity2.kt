@@ -111,6 +111,10 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
                     timepicker_test.currentMinute = 59
                 }
             }
+            R.id.btn_stop_progress_test -> {
+                progress_default_test.visibility = View.GONE
+                progress_linear_test.visibility = View.GONE
+            }
         }
     }
 
@@ -256,6 +260,8 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
 
         btn_time_get_test.setOnClickListener(this)
         btn_time_set_test.setOnClickListener(this)
+
+        btn_stop_progress_test.setOnClickListener(this)
 
     }
 
