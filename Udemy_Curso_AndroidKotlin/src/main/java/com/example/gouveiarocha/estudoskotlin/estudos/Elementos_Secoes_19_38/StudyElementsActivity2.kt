@@ -1,7 +1,9 @@
 package com.example.gouveiarocha.estudoskotlin.estudos.Elementos_Secoes_19_38
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -15,7 +17,8 @@ import java.util.*
 
 class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
     AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener,
-    CompoundButton.OnCheckedChangeListener, DatePickerDialog.OnDateSetListener {
+    CompoundButton.OnCheckedChangeListener, DatePickerDialog.OnDateSetListener,
+    TimePickerDialog.OnTimeSetListener, TimePicker.OnTimeChangedListener {
 
     private val mDate = SimpleDateFormat("dd/MM/yyyy")
 
@@ -25,7 +28,6 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
 
         initElements()
         loadDynamicSpinner()
-
 
     }
 
@@ -83,7 +85,31 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
                 val day = calendar.get(Calendar.DAY_OF_MONTH)
                 val month = calendar.get(Calendar.MONTH)
                 val year = calendar.get(Calendar.YEAR)
-                DatePickerDialog(this, this, year , month, day).show()
+                DatePickerDialog(this, this, year, month, day).show()
+            }
+            R.id.btn_timerpicker_test -> {
+                TimePickerDialog(this, this, 1, 1, true).show()
+            }
+            R.id.btn_time_get_test -> {
+                var hour = 0
+                var minute = 0
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    hour = timepicker_test.hour
+                    minute = timepicker_test.minute
+                } else {
+                    hour = timepicker_test.currentHour
+                    minute = timepicker_test.currentMinute
+                }
+                showToast("$hour:$minute")
+            }
+            R.id.btn_time_set_test -> {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    timepicker_test.hour = 5
+                    timepicker_test.minute = 59
+                } else {
+                    timepicker_test.currentHour = 5
+                    timepicker_test.currentMinute = 59
+                }
             }
         }
     }
@@ -159,13 +185,24 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
     }
 
     /**
-     * ---> Método DatePicker
+     * ---> Métodos DatePicker e TimePicker
      */
 
+    // Esse usamos para o DatePicker com Dialog.
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         val date = Calendar.getInstance()
         date.set(year, month, dayOfMonth)
         btn_datepicker_test.text = mDate.format(date.time)
+    }
+
+    // Esse usamos para o DatePicker com Dialog.
+    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
+        showToast("$hourOfDay:$minute")
+    }
+
+    // Esse usamos para o DatePicker direto no Layout.
+    override fun onTimeChanged(view: TimePicker?, hourOfDay: Int, minute: Int) {
+        showToast("$hourOfDay:$minute")
     }
 
     /**
@@ -214,6 +251,11 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
         radio_test_off.setOnCheckedChangeListener(this)
 
         btn_datepicker_test.setOnClickListener(this)
+        btn_timerpicker_test.setOnClickListener(this)
+        timepicker_test.setOnTimeChangedListener(this)
+
+        btn_time_get_test.setOnClickListener(this)
+        btn_time_set_test.setOnClickListener(this)
 
     }
 

@@ -173,12 +173,63 @@
 
         </RadioGroup>
 
-        <Button
-            android:id="@+id/btn_datepicker_test"
+        <!--DatePicker e TimePicker-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_datepicker_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="DatePicker" />
+
+            <Button
+                android:id="@+id/btn_timerpicker_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="TimePicker Dialog" />
+
+        </LinearLayout>
+
+        <TimePicker
+            android:id="@+id/timepicker_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="DatePicker" />
+            android:layout_marginBottom="8dp" />
+
+        <!--Botões testar Obter e Atribuir Timer-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_time_get_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Get Time" />
+
+            <Button
+                android:id="@+id/btn_time_set_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Set Time" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
