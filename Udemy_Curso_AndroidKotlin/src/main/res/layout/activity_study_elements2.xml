@@ -156,23 +156,29 @@
         <!--RadioGroup com RadioButtons Juntos-->
         <RadioGroup
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
 
             <RadioButton
                 android:id="@+id/radio_test_on"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
                 android:text="ON" />
 
             <RadioButton
                 android:id="@+id/radio_test_off"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
                 android:text="OFF" />
 
         </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_datepicker_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="DatePicker" />
 
     </LinearLayout>
 

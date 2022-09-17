@@ -1,5 +1,6 @@
 package com.example.gouveiarocha.estudoskotlin.estudos.Elementos_Secoes_19_38
 
+import android.app.DatePickerDialog
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
@@ -9,10 +10,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.gouveiarocha.estudoskotlin.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_study_elements2.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
     AdapterView.OnItemSelectedListener, SeekBar.OnSeekBarChangeListener,
-    CompoundButton.OnCheckedChangeListener {
+    CompoundButton.OnCheckedChangeListener, DatePickerDialog.OnDateSetListener {
+
+    private val mDate = SimpleDateFormat("dd/MM/yyyy")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_study_elements2)
@@ -71,6 +77,13 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
             }
             R.id.btn_seekbar_set_test -> {
                 seekbar_test.progress = 35
+            }
+            R.id.btn_datepicker_test -> {
+                val calendar = Calendar.getInstance()
+                val day = calendar.get(Calendar.DAY_OF_MONTH)
+                val month = calendar.get(Calendar.MONTH)
+                val year = calendar.get(Calendar.YEAR)
+                DatePickerDialog(this, this, year , month, day).show()
             }
         }
     }
@@ -146,6 +159,16 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
     }
 
     /**
+     * ---> Método DatePicker
+     */
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        val date = Calendar.getInstance()
+        date.set(year, month, dayOfMonth)
+        btn_datepicker_test.text = mDate.format(date.time)
+    }
+
+    /**
      * ---> Métodos Proprios.
      */
 
@@ -189,6 +212,8 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
 
         radio_test_on.setOnCheckedChangeListener(this)
         radio_test_off.setOnCheckedChangeListener(this)
+
+        btn_datepicker_test.setOnClickListener(this)
 
     }
 
