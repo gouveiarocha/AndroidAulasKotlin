@@ -134,6 +134,14 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
 //                buttonView.isEnabled = true
 //                buttonView.isClickable = true
             }
+            R.id.radio_test_on -> {
+                showToast("Radio On ${if (isChecked) "True" else "False"}")
+                // Também podemos alterar o estado, assim como o Switch e CheckBox.
+            }
+            R.id.radio_test_off -> {
+                showToast("Radio Off ${if (isChecked) "True" else "False"}")
+                // Também podemos alterar o estado, assim como o Switch e CheckBox.
+            }
         }
     }
 
@@ -178,6 +186,9 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
 
         switch_test.setOnCheckedChangeListener(this)
         checkbox_test.setOnCheckedChangeListener(this)
+
+        radio_test_on.setOnCheckedChangeListener(this)
+        radio_test_off.setOnCheckedChangeListener(this)
 
     }
 

@@ -1,137 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linear_root"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp"
-    tools:context=".estudos.Elementos_Secoes_19_38.StudyElementsActivity2">
+    android:layout_height="match_parent">
 
-    <!--Botões testar Toast e Custom Toast-->
-    <LinearLayout
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linear_root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        tools:context=".estudos.Elementos_Secoes_19_38.StudyElementsActivity2">
 
-        <Button
-            android:id="@+id/btn_toast_test"
-            android:layout_width="0dp"
+        <!--Botões testar Toast e Custom Toast-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:text="Toast" />
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btn_toast_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Toast" />
+
+            <Button
+                android:id="@+id/btn_toast_test_cust"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Custom Toast" />
+
+        </LinearLayout>
+
+        <!--Botão testar SnackBar-->
         <Button
-            android:id="@+id/btn_toast_test_cust"
-            android:layout_width="0dp"
+            android:id="@+id/btn_snack_test"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:text="Custom Toast" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Snack" />
+
+        <!--Spinners Testes-->
+        <Spinner
+            android:id="@+id/spinner_static_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:entries="@array/spinner_test_values" />
+
+        <Spinner
+            android:id="@+id/spinner_dynamic_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <!--Botões testar Obter e Atribuir ao Spinner-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_spinner_get_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Get Spinner" />
+
+            <Button
+                android:id="@+id/btn_spinner_set_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Set Spinner" />
+
+        </LinearLayout>
+
+        <!--Seekbar-->
+        <SeekBar
+            android:id="@+id/seekbar_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:max="50" />
+
+        <TextView
+            android:id="@+id/text_seekbar_value_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Seekbar = 0" />
+
+        <!--Botões testar Obter e Atribuir ao Seekbar-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_seekbar_get_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="Get Seekbar" />
+
+            <Button
+                android:id="@+id/btn_seekbar_set_test"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="Set Seekbar" />
+
+        </LinearLayout>
+
+        <!--Switch-->
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!--Checkbox-->
+        <CheckBox
+            android:id="@+id/checkbox_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <!--RadioButtons Independentes-->
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Radio Button 1" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Radio Button 2" />
+
+        <!--RadioGroup com RadioButtons Juntos-->
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio_test_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="ON" />
+
+            <RadioButton
+                android:id="@+id/radio_test_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="OFF" />
+
+        </RadioGroup>
 
     </LinearLayout>
 
-    <!--Botão testar SnackBar-->
-    <Button
-        android:id="@+id/btn_snack_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        android:text="Snack" />
+</ScrollView>
 
-    <!--Spinners Testes-->
-    <Spinner
-        android:id="@+id/spinner_static_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:entries="@array/spinner_test_values" />
 
-    <Spinner
-        android:id="@+id/spinner_dynamic_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp" />
-
-    <!--Botões testar Obter e Atribuir ao Spinner-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_spinner_get_test"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:text="Get Spinner" />
-
-        <Button
-            android:id="@+id/btn_spinner_set_test"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:text="Set Spinner" />
-
-    </LinearLayout>
-
-    <!--Seekbar-->
-    <SeekBar
-        android:id="@+id/seekbar_test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:max="50" />
-
-    <TextView
-        android:id="@+id/text_seekbar_value_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Seekbar = 0" />
-
-    <!--Botões testar Obter e Atribuir ao Seekbar-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_seekbar_get_test"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_weight="1"
-            android:text="Get Seekbar" />
-
-        <Button
-            android:id="@+id/btn_seekbar_set_test"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:text="Set Seekbar" />
-
-    </LinearLayout>
-
-    <!--Switch-->
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp" />
-
-    <!--Checkbox-->
-    <CheckBox
-        android:id="@+id/checkbox_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
