@@ -118,7 +118,7 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
         }
     }
 
-    // Lembrete: O método onItemSelected), serve p tratar clique nos elementos diferentes, porém do
+    // Lembrete: O método onItemSelected, serve p tratar clique nos elementos diferentes, porém do
     // mesmo tipo na nossa View - como é o exemplo do nosso spinner.
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         when (parent?.id) {
@@ -139,7 +139,7 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
     }
 
     /**
-     * ---> Métodos Seekbar.
+     * ---> Métodos Seekbar
      */
 
     override fun onProgressChanged(seekbar: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -210,7 +210,7 @@ class StudyElementsActivity2 : AppCompatActivity(), View.OnClickListener,
     }
 
     /**
-     * ---> Métodos Proprios.
+     * ---> Métodos Proprios
      */
 
     private fun showToast(str: String) {
