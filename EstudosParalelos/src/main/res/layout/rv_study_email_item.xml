@@ -1,16 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:background="@drawable/card_view_bg"
     tools:showIn="@layout/activity_study_recycler_view">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="@color/design_default_color_primary_dark"
-        android:text="Hello" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/study_recycler_txt_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="@color/white"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/study_recycler_txt_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/study_recycler_txt_icon"
+            android:layout_marginStart="16dp"
+            android:layout_toStartOf="@id/study_recycler_txt_date"
+            android:layout_toEndOf="@id/study_recycler_txt_icon"
+            android:text="Facebook"
+            android:textColor="@color/darker_gray"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/study_recycler_txt_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/study_recycler_txt_user"
+            android:layout_alignStart="@id/study_recycler_txt_user"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="Subject Subject Subject Subject Subject Subject"
+            android:textColor="@color/darker_gray"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/study_recycler_txt_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/study_recycler_txt_subject"
+            android:layout_alignStart="@id/study_recycler_txt_subject"
+            android:layout_marginEnd="24dp"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="Preview Preview Preview Preview Preview Preview"
+            android:textColor="@color/darker_gray"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/study_recycler_txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="01 jan"
+            android:textColor="@color/darker_gray"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/study_recycler_img_star"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_star_24"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
