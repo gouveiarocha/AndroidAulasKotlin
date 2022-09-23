@@ -79,7 +79,7 @@
             android:layout_height="24dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/ic_star_24"
+            android:src="@drawable/ic_star_border_24"
             tools:ignore="ContentDescription" />
 
     </RelativeLayout>
