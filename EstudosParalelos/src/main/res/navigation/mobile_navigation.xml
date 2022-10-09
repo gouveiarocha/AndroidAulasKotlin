@@ -9,7 +9,11 @@
         android:id="@+id/nav_home"
         android:name="com.example.paralelos.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_test"
+            app:destination="@id/nav_test" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +26,16 @@
         android:name="com.example.paralelos.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_test"
+        android:name="com.example.paralelos.ui.test.TestFragment"
+        android:label="@string/menu_test"
+        tools:layout="@layout/fragment_test">
+        <argument
+            android:name="id"
+            android:defaultValue="10"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>
