@@ -68,7 +68,7 @@ fun main() {
     println("Menos calórica: ${menosCal?.nome}")
 
     // Faça uma lista com o nome dos pratos
-    data.map { it.nome }
+    println(data.map { it.nome })
 
     // Qual a média de caloria de todas as receitas?
     val media = data.map { it.calorias }.average()

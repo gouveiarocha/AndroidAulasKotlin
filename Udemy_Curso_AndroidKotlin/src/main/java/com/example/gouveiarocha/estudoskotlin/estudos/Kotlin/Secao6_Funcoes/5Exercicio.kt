@@ -1,10 +1,16 @@
 package Secao6_Funcoes
 
+const val STRING_TEST = "Texto de %s teste..."
+
 fun main() {
     conversaoAnos(2)
     println(tamanhoString("Programação Kotlin."))
     println(cubo(2))
     println(milhasEmKm(100f))
+
+    println(trocaLetras(STRING_TEST))
+    println(String.format(STRING_TEST, "OPA"))
+
 }
 
 fun conversaoAnos(anos: Int) {
@@ -29,7 +35,7 @@ fun milhasEmKm(milhas: Float): Float {
 }
 
 fun trocaLetras(str: String): String {
-    return str.lowercase().replace("a", "x")
+    return str.lowercase().replace("%s", "x")
 }
 
 fun tamanhoStringUnicaLinha(str: String) = str.length
