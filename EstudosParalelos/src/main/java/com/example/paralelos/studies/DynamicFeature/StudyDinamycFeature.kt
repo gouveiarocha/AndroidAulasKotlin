@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.paralelos.BuildConfig
 import com.example.paralelos.R
@@ -18,7 +17,7 @@ const val REQUIRES_USER_CONFIRMATION_CODE = 9528
 class DinamycFeatureStudy : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dinamyc_feature_study)
+        setContentView(R.layout.activity_study_dinamyc_feature)
 
         // Cria um Install Request.
         val moduleRequest = SplitInstallRequest
