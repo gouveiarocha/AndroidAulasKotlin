@@ -22,9 +22,9 @@
 
     <fragment
         android:id="@+id/challengeHomeFragment"
-        android:name="com.gouveia.yt_pde_android.challenge.ChallengeHomeFragment"
+        android:name="com.gouveia.yt_pde_android.dca.DcaHomeFragment"
         android:label="fragment_challenge_home"
-        tools:layout="@layout/fragment_challenge_home" />
+        tools:layout="@layout/fragment_dca_home" />
     <fragment
         android:id="@+id/toastSnakeFragment"
         android:name="com.gouveia.yt_pde_android.gdc.codelab.core.toast.ToastSnakeFragment"
