@@ -14,10 +14,25 @@
         android:id="@+id/gdcHomeFragment"
         android:name="com.gouveia.yt_pde_android.gdc.GdcHomeFragment"
         android:label="fragment_gdc_home"
-        tools:layout="@layout/fragment_gdc_home" />
+        tools:layout="@layout/fragment_gdc_home">
+        <action
+            android:id="@+id/action_gdcHomeFragment_to_toastSnakeFragment"
+            app:destination="@id/toastSnakeFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/challengeHomeFragment"
         android:name="com.gouveia.yt_pde_android.challenge.ChallengeHomeFragment"
         android:label="fragment_challenge_home"
         tools:layout="@layout/fragment_challenge_home" />
+    <fragment
+        android:id="@+id/toastSnakeFragment"
+        android:name="com.gouveia.yt_pde_android.gdc.codelab.core.toast.ToastSnakeFragment"
+        android:label="fragment_toast_snake"
+        tools:layout="@layout/fragment_toast_snake">
+        <action
+            android:id="@+id/action_toastSnakeFragment_to_gdcHomeFragment"
+            app:destination="@id/gdcHomeFragment" />
+    </fragment>
+
 </navigation>
