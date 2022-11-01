@@ -13,8 +13,8 @@ import com.google.android.material.snackbar.Snackbar
 fun Fragment.navTo(@IdRes dest: Int) = findNavController().navigate(dest)
 fun Fragment.navTo(directions: NavDirections) = findNavController().navigate(directions)
 fun Fragment.navTo(@IdRes dest: Int, args: Bundle) = findNavController().navigate(dest, args)
-fun Fragment.toast(msg: String) = Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
-fun Fragment.snake(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show()
+fun Fragment.showToast(msg: String) = Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+fun Fragment.showSnake(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show()
 
 fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bundle()) {
     val intent = Intent(requireContext(), clazz).apply {

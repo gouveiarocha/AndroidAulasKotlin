@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.gouveia.yt_pde_android.R
 import com.gouveia.yt_pde_android.databinding.FragmentToastSnakeBinding
-import com.gouveia.yt_pde_android.util.toast
+import com.gouveia.yt_pde_android.util.showToast
 
 class ToastSnakeFragment : Fragment(R.layout.fragment_toast_snake) {
 
@@ -38,7 +38,7 @@ class ToastSnakeFragment : Fragment(R.layout.fragment_toast_snake) {
         // Snackbar com Ação
         binding.snakeAction.setOnClickListener {
             Snackbar.make(view, "Snack test with Action...", Snackbar.LENGTH_SHORT)
-                .setAction("OK") { toast("OK Clicked...") }
+                .setAction("OK") { showToast("OK Clicked...") }
                 .show()
         }
 
