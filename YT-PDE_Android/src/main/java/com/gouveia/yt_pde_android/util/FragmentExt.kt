@@ -1,12 +1,10 @@
-package com.gouveia.ytpde_certificacaoandroid.gdc.util
+package com.gouveia.yt_pde_android.util
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.IdRes
-import androidx.annotation.StyleRes
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
@@ -18,10 +16,10 @@ fun Fragment.navTo(@IdRes dest: Int, args: Bundle) = findNavController().navigat
 fun Fragment.toast(msg: String) = Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
 fun Fragment.snake(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show()
 
-fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bundle()){
+fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bundle()) {
     val intent = Intent(requireContext(), clazz).apply {
-        if(!(name.isNullOrEmpty() && args.isEmpty)) {
-            putExtra(name,args)
+        if (!(name.isNullOrEmpty() && args.isEmpty)) {
+            putExtra(name, args)
         }
     }
     requireActivity().startActivity(intent)

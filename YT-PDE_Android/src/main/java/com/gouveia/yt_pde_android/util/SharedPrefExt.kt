@@ -1,4 +1,4 @@
-package com.gouveia.ytpde_certificacaoandroid.gdc.util
+package com.gouveia.yt_pde_android.util
 
 import android.content.Context
 import androidx.annotation.StyleRes
@@ -6,32 +6,32 @@ import androidx.annotation.StyleRes
 const val GLOBAL_SHARED_PREFS = "br.com.programadordeelite.global.sharedprefs"
 const val GLOBAL_APP_STYLE = "GLOBAL_APP_STYLE"
 
-fun Context.putStyleIntSharedPref(key:String, @StyleRes value:Int){
+fun Context.putStyleIntSharedPref(key: String, @StyleRes value: Int) {
     val sharedPref = getSharedPreferences(GLOBAL_SHARED_PREFS, Context.MODE_PRIVATE)
     sharedPref?.edit()?.putInt(key, value)?.apply()
 }
 
-fun Context.putStringSharedPref(key:String, value:String){
+fun Context.putStringSharedPref(key: String, value: String) {
     val sharedPref = getSharedPreferences(GLOBAL_SHARED_PREFS, Context.MODE_PRIVATE)
     sharedPref?.edit()?.putString(key, value)?.apply()
 }
 
-fun Context.putBooleanSharedPref(key:String, value:Boolean){
+fun Context.putBooleanSharedPref(key: String, value: Boolean) {
     val sharedPref = getSharedPreferences(GLOBAL_SHARED_PREFS, Context.MODE_PRIVATE)
     sharedPref?.edit()?.putBoolean(key, value)?.apply()
 }
 
-fun Context.getIntSharedPref(key:String): Int{
+fun Context.getIntSharedPref(key: String): Int {
     val sharedPref = getSharedPreferences(GLOBAL_SHARED_PREFS, Context.MODE_PRIVATE)
     return sharedPref?.getInt(key, -1) ?: -1
 }
 
-fun Context.getStringSharedPref(key:String): String{
+fun Context.getStringSharedPref(key: String): String {
     val sharedPref = getSharedPreferences(GLOBAL_SHARED_PREFS, Context.MODE_PRIVATE)
     return sharedPref?.getString(key, "") ?: ""
 }
 
-fun Context.getBooleanSharedPref(key:String): Boolean{
+fun Context.getBooleanSharedPref(key: String): Boolean {
     val sharedPref = getSharedPreferences(GLOBAL_SHARED_PREFS, Context.MODE_PRIVATE)
     return sharedPref?.getBoolean(key, false) ?: false
 }

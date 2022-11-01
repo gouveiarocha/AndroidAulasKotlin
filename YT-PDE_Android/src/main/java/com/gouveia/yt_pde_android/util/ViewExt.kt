@@ -1,4 +1,4 @@
-package com.gouveia.ytpde_certificacaoandroid.gdc.util
+package com.gouveia.yt_pde_android.util
 
 import android.view.View
 import android.view.animation.Animation
