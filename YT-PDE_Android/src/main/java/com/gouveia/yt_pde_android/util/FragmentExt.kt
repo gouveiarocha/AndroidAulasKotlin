@@ -1,10 +1,12 @@
 package com.gouveia.yt_pde_android.util
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.IdRes
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
@@ -23,4 +25,19 @@ fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bu
         }
     }
     requireActivity().startActivity(intent)
+}
+
+/** VERIFICA SE A PERMISSÃO FOI CONCEDIDA: https://youtu.be/grYUKZDTzVA */
+fun Fragment.hasPermission(permission: String): Boolean {
+    val permissionCheckResult = ContextCompat.checkSelfPermission(requireContext(), permission)
+    return PackageManager.PERMISSION_GRANTED == permissionCheckResult
+}
+
+/** VERIFICA SE DEVE SOLICITAR AS PERMISSÕES NOVAMENTE: https://youtu.be/grYUKZDTzVA */
+fun Fragment.shouldRequestPermission(permissions: Array<String>): Boolean {
+    val grantedPermissions = mutableListOf<Boolean>()
+    permissions.forEach { permission ->
+        grantedPermissions.add(hasPermission(permission))
+    }
+    return grantedPermissions.any { granted -> !granted }
 }

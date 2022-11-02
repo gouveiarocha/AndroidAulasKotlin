@@ -14,7 +14,7 @@ class MainFragment : androidx.fragment.app.Fragment(R.layout.fragment_main) {
         binding = FragmentMainBinding.bind(view)
 
         binding.btnGdc.setOnClickListener { navTo(R.id.gdcHomeFragment) }
-        binding.btnDesafios.setOnClickListener { navTo(R.id.challengeHomeFragment) }
+        binding.btnDesafios.setOnClickListener { navTo(R.id.dcaHomeFragment) }
 
     }
 
