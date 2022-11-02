@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Alura_Formacao_AndroidArquitetura_Technews" />
             <option value="$PROJECT_DIR$/Alura_Formacao_AndroidKotlin_Orgs" />
+            <option value="$PROJECT_DIR$/Android_KT_Main" />
             <option value="$PROJECT_DIR$/EstudosParalelos" />
             <option value="$PROJECT_DIR$/EstudosParalelos_AppMovies_CoroutinesKoin" />
             <option value="$PROJECT_DIR$/EstudosParalelos_DynamicFeature" />
@@ -19,7 +20,6 @@
             <option value="$PROJECT_DIR$/Udemy_Curso_AndroidKotlin" />
             <option value="$PROJECT_DIR$/Udemy_Curso_AndroidKotlin_AppConvidados" />
             <option value="$PROJECT_DIR$/Udemy_Curso_AndroidKotlin_AppTasks" />
-            <option value="$PROJECT_DIR$/YT-PDE_Android" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
