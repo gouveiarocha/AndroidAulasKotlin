@@ -16,6 +16,7 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
         binding = FragmentDcaHomeBinding.bind(view)
 
         binding.dcaRequestPermission.setOnClickListener { navTo(R.id.dcaRequestPermissionFragment) }
+        binding.dcaRequestResult.setOnClickListener { navTo(R.id.dcaRequestResultFragment) }
 
     }
 

@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_dcaHomeFragment_to_dcaRequestPermissionFragment"
             app:destination="@id/dcaRequestPermissionFragment" />
+        <action
+            android:id="@+id/action_dcaHomeFragment_to_dcaRequestResultFragment"
+            app:destination="@id/dcaRequestResultFragment" />
     </fragment>
 
     <fragment
@@ -56,6 +59,27 @@
         <action
             android:id="@+id/action_dcaRequestPermissionFragment_to_dcaHomeFragment"
             app:destination="@id/dcaHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dcaRequestResultFragment"
+        android:name="com.gouveia.android_main.dca.start_for_result.DcaRequestResultFragment"
+        android:label="fragment_dca_request_result"
+        tools:layout="@layout/fragment_dca_request_result" >
+        <action
+            android:id="@+id/action_dcaRequestResultFragment_to_dcaResultFragment"
+            app:destination="@id/dcaResultFragment" />
+        <action
+            android:id="@+id/action_dcaRequestResultFragment_to_dcaHomeFragment"
+            app:destination="@id/dcaHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dcaResultFragment"
+        android:name="com.gouveia.android_main.dca.start_for_result.DcaResultFragment"
+        android:label="fragment_dca_result"
+        tools:layout="@layout/fragment_dca_result" >
+        <action
+            android:id="@+id/action_dcaResultFragment_to_dcaRequestResultFragment"
+            app:destination="@id/dcaRequestResultFragment" />
     </fragment>
 
 </navigation>

@@ -63,7 +63,7 @@ fun Fragment.showYoutubeVideo(videoId: String) {
 /** VERIFICA SE A PERMISSÃO FOI CONCEDIDA: https://youtu.be/grYUKZDTzVA */
 fun Fragment.hasPermission(permission: String): Boolean {
     val permissionCheckResult = ContextCompat.checkSelfPermission(requireContext(), permission)
-    return PackageManager.PERMISSION_GRANTED == permissionCheckResult
+    return permissionCheckResult == PackageManager.PERMISSION_GRANTED
 }
 
 /** VERIFICA SE DEVE SOLICITAR AS PERMISSÕES NOVAMENTE: https://youtu.be/grYUKZDTzVA */

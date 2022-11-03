@@ -22,7 +22,7 @@ class DcaRequestPermissionFragment : Fragment(R.layout.fragment_dca_request_perm
     private lateinit var binding: FragmentDcaRequestPermissionBinding
 
     // NOVA API DE SOLICITACÃO DE PERMISSÕES QUE USA CALLBACKS
-    private lateinit var activityResultLauncher: ActivityResultLauncher<Array<String>>
+    private lateinit var requestPermissionsLauncher: ActivityResultLauncher<Array<String>>
 
     // PERMISSÕES QUE IREMOS SOLICITAR AO USUÁRIO EM TEMPO DE EXECUÇÃO
     private val permissions = arrayOf(READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE)
@@ -30,7 +30,7 @@ class DcaRequestPermissionFragment : Fragment(R.layout.fragment_dca_request_perm
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        activityResultLauncher =
+        requestPermissionsLauncher =
             registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissionResult ->
 
                 // O it(ou permissionResult) é um map com uma chave String(permissão) e um valor boolean(representando se a permissão foi concedidada ou não)
@@ -49,8 +49,8 @@ class DcaRequestPermissionFragment : Fragment(R.layout.fragment_dca_request_perm
                     showToast("Permissões concedidas!")
                 } else {
                     // Pegamos quais permissões foram negadas.
-                    val deniedPermissions = permissionResult.map { perm ->
-                        if (!perm.value) perm.key else ""
+                    val deniedPermissions = permissionResult.map { permission ->
+                        if (!permission.value) permission.key else ""
                     }.filter { it.isNotEmpty() }.toList()
                     showWhyPermissionsAreNeeded(deniedPermissions)
                 }
@@ -63,7 +63,7 @@ class DcaRequestPermissionFragment : Fragment(R.layout.fragment_dca_request_perm
 
         binding.requestPermissionButton.setOnClickListener {
             if (shouldRequestPermission(permissions)) {
-                activityResultLauncher.launch(permissions)
+                requestPermissionsLauncher.launch(permissions)
             } else {
                 showToast("Permissões já foram concedidas...")
             }
