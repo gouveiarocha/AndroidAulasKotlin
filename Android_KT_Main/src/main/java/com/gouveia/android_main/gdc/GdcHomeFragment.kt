@@ -2,11 +2,12 @@ package com.gouveia.android_main.gdc
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.Fragment
 import com.gouveia.android_main.R
 import com.gouveia.android_main.databinding.FragmentGdcHomeBinding
 import com.gouveia.android_main.utils.extensions.navTo
 
-class GdcHomeFragment : androidx.fragment.app.Fragment(R.layout.fragment_gdc_home) {
+class GdcHomeFragment : Fragment(R.layout.fragment_gdc_home) {
 
     private lateinit var binding: FragmentGdcHomeBinding
 
@@ -15,7 +16,7 @@ class GdcHomeFragment : androidx.fragment.app.Fragment(R.layout.fragment_gdc_hom
 
         binding = FragmentGdcHomeBinding.bind(view)
 
-        binding.gdcToastSnake.setOnClickListener { navTo(R.id.toastSnakeFragment) }
+        binding.gdcToastSnake.setOnClickListener { navTo(R.id.gdcToastSnakeFragment) }
 
     }
 
