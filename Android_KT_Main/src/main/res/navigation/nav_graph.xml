@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_gdcHomeFragment_to_gdcToastSnakeFragment"
             app:destination="@id/gdcToastSnakeFragment" />
+        <action
+            android:id="@+id/action_gdcHomeFragment_to_gdcNotificationFragment"
+            app:destination="@id/gdcNotificationFragment" />
     </fragment>
 
     <fragment
@@ -80,6 +83,15 @@
         <action
             android:id="@+id/action_dcaResultFragment_to_dcaRequestResultFragment"
             app:destination="@id/dcaRequestResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gdcNotificationFragment"
+        android:name="com.gouveia.android_main.gdc.core.notification.GdcNotificationFragment"
+        android:label="fragment_gdc_notification"
+        tools:layout="@layout/fragment_gdc_notification" >
+        <action
+            android:id="@+id/action_gdcNotificationFragment_to_gdcHomeFragment"
+            app:destination="@id/gdcHomeFragment" />
     </fragment>
 
 </navigation>

@@ -13,10 +13,11 @@ class GdcHomeFragment : Fragment(R.layout.fragment_gdc_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding = FragmentGdcHomeBinding.bind(view)
 
+        // CORE
         binding.gdcToastSnake.setOnClickListener { navTo(R.id.gdcToastSnakeFragment) }
+        binding.gdcCodelabNotification.setOnClickListener { navTo(R.id.gdcNotificationFragment) }
 
     }
 

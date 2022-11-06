@@ -43,7 +43,7 @@
             tools:ignore="RtlHardcoded" />
 
         <Button
-            android:id="@+id/codelab_notification"
+            android:id="@+id/gdc_codelab_notification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
