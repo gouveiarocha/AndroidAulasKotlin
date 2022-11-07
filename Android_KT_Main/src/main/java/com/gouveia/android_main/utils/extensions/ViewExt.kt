@@ -43,15 +43,15 @@ fun View.setVisible(show: Boolean) {
     if (show) this.visibility = View.VISIBLE else this.visibility = View.GONE
 }
 
+/** EXIBE O TECLADO */
 @RequiresApi(Build.VERSION_CODES.R)
-/** ESCONDE O TECLADO */
 fun View.showKeyboard(view: View) {
     windowInsetsController?.show(WindowInsets.Type.ime())
     view.requestFocus()
 }
 
+/** ESCONDE O TECLADO */
 @RequiresApi(Build.VERSION_CODES.R)
-/** EXIBE O TECLADO */
 fun View.hideKeyboard(view: View) {
     windowInsetsController?.hide(WindowInsets.Type.ime())
     view.clearFocus()

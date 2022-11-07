@@ -98,9 +98,7 @@ fun Fragment.showKeyboard(view: View? = activity?.currentFocus) {
     }
 }
 
-fun Fragment.inputMethodManager() =
-    context?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
-
+fun Fragment.inputMethodManager() = context?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
 
 //@Suppress("DEPRECATION")
 //        /** FAZ COM QUE O APARELHO VIBRE PELO TEMPO DEFINIDO: https://youtu.be/ogxgiaCq_24  */

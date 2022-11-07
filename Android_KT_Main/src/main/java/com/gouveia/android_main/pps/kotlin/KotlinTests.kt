@@ -1,13 +1,11 @@
 package com.gouveia.android_main.pps.kotlin
 
 fun main() {
-
     testaComandoAll()
     testaComandoAny()
-
 }
 
-fun testaComandoAny() {
+private fun testaComandoAny() {
 
     // COMANDO ANY (COLECTIONS)
 
@@ -22,7 +20,6 @@ fun testaComandoAny() {
     println(test2)
 
 }
-
 private fun testaComandoAll(){
 
     // COMANDO ALL (COLECTIONS)
