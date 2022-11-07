@@ -46,6 +46,19 @@
             android:textColor="@color/white"
             tools:ignore="RtlHardcoded" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dca_keyboard_vibration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:gravity="left|center_vertical"
+            android:text="Gerenciamento de Teclado e Vibração"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            tools:ignore="RtlHardcoded" />
+
     </LinearLayout>
 
 </ScrollView>

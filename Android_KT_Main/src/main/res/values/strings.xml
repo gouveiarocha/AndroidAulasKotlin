@@ -6,4 +6,9 @@
 
     <string name="notify_me">Notify Me!</string>
 
+    <!--- Explicaçãoes -->
+    <string name="keyboard_vibration_explanation">Essa aula não possui implementação de interação
+        no App, apenas explicação para os métodos das classes de extenção. Fica como
+        sugestão fazer implementação própria.</string>
+
 </resources>
