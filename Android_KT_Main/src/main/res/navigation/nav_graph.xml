@@ -5,6 +5,8 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/mainFragment">
 
+    <!--- MAIN -->
+
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.gouveia.android_main.MainFragment"
@@ -18,6 +20,8 @@
             app:destination="@id/dcaHomeFragment" />
     </fragment>
 
+    <!--- GDC -->
+
     <fragment
         android:id="@+id/gdcHomeFragment"
         android:name="com.gouveia.android_main.gdc.GdcHomeFragment"
@@ -30,6 +34,28 @@
             android:id="@+id/action_gdcHomeFragment_to_gdcNotificationFragment"
             app:destination="@id/gdcNotificationFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/gdcToastSnakeFragment"
+        android:name="com.gouveia.android_main.gdc.core.toast.GdcToastSnakeFragment"
+        android:label="fragment_gdc_toast_snake"
+        tools:layout="@layout/fragment_gdc_toast_snake">
+        <action
+            android:id="@+id/action_gdcToastSnakeFragment_to_gdcHomeFragment"
+            app:destination="@id/gdcHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gdcNotificationFragment"
+        android:name="com.gouveia.android_main.gdc.core.notification.GdcNotificationFragment"
+        android:label="fragment_gdc_notification"
+        tools:layout="@layout/fragment_gdc_notification" >
+        <action
+            android:id="@+id/action_gdcNotificationFragment_to_gdcHomeFragment"
+            app:destination="@id/gdcHomeFragment" />
+    </fragment>
+
+    <!--- DCA -->
 
     <fragment
         android:id="@+id/dcaHomeFragment"
@@ -48,16 +74,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/gdcToastSnakeFragment"
-        android:name="com.gouveia.android_main.gdc.core.toast.GdcToastSnakeFragment"
-        android:label="fragment_gdc_toast_snake"
-        tools:layout="@layout/fragment_gdc_toast_snake">
-        <action
-            android:id="@+id/action_gdcToastSnakeFragment_to_gdcHomeFragment"
-            app:destination="@id/gdcHomeFragment" />
-    </fragment>
-
-    <fragment
         android:id="@+id/dcaRequestPermissionFragment"
         android:name="com.gouveia.android_main.dca.permission.DcaRequestPermissionFragment"
         android:label="fragment_dca_request_permission"
@@ -66,6 +82,7 @@
             android:id="@+id/action_dcaRequestPermissionFragment_to_dcaHomeFragment"
             app:destination="@id/dcaHomeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/dcaRequestResultFragment"
         android:name="com.gouveia.android_main.dca.start_for_result.DcaRequestResultFragment"
@@ -78,6 +95,7 @@
             android:id="@+id/action_dcaRequestResultFragment_to_dcaHomeFragment"
             app:destination="@id/dcaHomeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/dcaResultFragment"
         android:name="com.gouveia.android_main.dca.start_for_result.DcaResultFragment"
@@ -87,15 +105,7 @@
             android:id="@+id/action_dcaResultFragment_to_dcaRequestResultFragment"
             app:destination="@id/dcaRequestResultFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/gdcNotificationFragment"
-        android:name="com.gouveia.android_main.gdc.core.notification.GdcNotificationFragment"
-        android:label="fragment_gdc_notification"
-        tools:layout="@layout/fragment_gdc_notification" >
-        <action
-            android:id="@+id/action_gdcNotificationFragment_to_gdcHomeFragment"
-            app:destination="@id/gdcHomeFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/dcaKeyboardVibrationFragment"
         android:name="com.gouveia.android_main.dca.keyboard_vibration.DcaKeyboardVibrationFragment"
