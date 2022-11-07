@@ -100,32 +100,31 @@ fun Fragment.showKeyboard(view: View? = activity?.currentFocus) {
 
 fun Fragment.inputMethodManager() = context?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
 
-//@Suppress("DEPRECATION")
-//        /** FAZ COM QUE O APARELHO VIBRE PELO TEMPO DEFINIDO: https://youtu.be/ogxgiaCq_24  */
-//fun Fragment.vibrate(duration: Long = 100) {
-//    val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
-//    when {
-//        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-//            val vm =
-//                requireContext().getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
-//            vm.defaultVibrator.vibrate(
-//                VibrationEffect.createOneShot(
-//                    duration,
-//                    VibrationEffect.DEFAULT_AMPLITUDE
-//                )
-//            )
-//        }
-//        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && Build.VERSION.SDK_INT < Build.VERSION_CODES.S -> {
-//            vibrator?.vibrate(
-//                VibrationEffect.createOneShot(
-//                    duration,
-//                    VibrationEffect.DEFAULT_AMPLITUDE
-//                )
-//            )
-//        }
-//        else -> vibrator?.vibrate(duration)
-//    }
-//}
+/** FAZ COM QUE O APARELHO VIBRE PELO TEMPO DEFINIDO: https://youtu.be/ogxgiaCq_24  */
+@Suppress("DEPRECATION")
+fun Fragment.vibrate(duration: Long = 100) {
+    val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
+    when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+            val vm = requireContext().getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            vm.defaultVibrator.vibrate(
+                VibrationEffect.createOneShot(
+                    duration,
+                    VibrationEffect.DEFAULT_AMPLITUDE
+                )
+            )
+        }
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && Build.VERSION.SDK_INT < Build.VERSION_CODES.S -> {
+            vibrator?.vibrate(
+                VibrationEffect.createOneShot(
+                    duration,
+                    VibrationEffect.DEFAULT_AMPLITUDE
+                )
+            )
+        }
+        else -> vibrator?.vibrate(duration)
+    }
+}
 
 ///** VERIFICA SE TEM REDE E SE TEM ACESSO A INTERNET: https://youtu.be/DpyxLwibE0M  */
 //fun Fragment.hasInternet(): Boolean {

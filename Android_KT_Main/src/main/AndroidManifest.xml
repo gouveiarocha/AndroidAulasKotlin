@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gouveia.android_main">
 
+    <!-- Permissões -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- Broadcast Receiver -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -26,10 +28,11 @@
         </activity>
 
         <!-- FIX PARA O PROBLEMA COM android:exported OCASIONADO POR LIBS TERCEIRAS -->
-        <receiver android:name=".gdc.core.notification.DynamicReceiver"
+        <receiver
+            android:name=".gdc.core.notification.DynamicReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
