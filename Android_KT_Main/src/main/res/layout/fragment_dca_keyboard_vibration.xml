@@ -7,8 +7,10 @@
     tools:context=".dca.keyboard_vibration.DcaKeyboardVibrationFragment">
 
     <TextView
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:text="@string/explanation_keyboard_vibration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
