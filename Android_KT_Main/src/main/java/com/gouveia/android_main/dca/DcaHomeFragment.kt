@@ -18,6 +18,7 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
         binding.dcaRequestPermission.setOnClickListener { navTo(R.id.dcaRequestPermissionFragment) }
         binding.dcaRequestResult.setOnClickListener { navTo(R.id.dcaRequestResultFragment) }
         binding.dcaKeyboardVibration.setOnClickListener { navTo(R.id.dcaKeyboardVibrationFragment) }
+        binding.dcaObligation.setOnClickListener { navTo(R.id.dcaObligationFragment) }
 
     }
 

@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.gouveia.android_main.MainActivity
 
+/** OFUSCAMENTO DA TELA NA ACTIVITY */
 fun AppCompatActivity.preventScreenshotsAndRecentAppThumbnails() {
     window.setFlags(
         WindowManager.LayoutParams.FLAG_SECURE,

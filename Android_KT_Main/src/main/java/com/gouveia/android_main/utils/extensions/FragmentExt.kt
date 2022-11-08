@@ -32,6 +32,20 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.gouveia.android_main.BuildConfig
 
+/** OFUSCAMENTO DE TELA NO FRAGMENT - BY ME */
+fun Fragment.setObfuscation(overshadow: Boolean) {
+    if (overshadow) {
+        this.activity?.window?.setFlags(
+            WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_SECURE
+        )
+    } else {
+        this.activity?.window?.clearFlags(
+            WindowManager.LayoutParams.FLAG_SECURE
+        )
+    }
+}
+
 /** NAVEGA PARA O DESTINO INDICADO ATRAVES DO ID DO NAGIVATION GRAPH */
 fun Fragment.navTo(@IdRes dest: Int) = findNavController().navigate(dest)
 fun Fragment.navTo(directions: NavDirections) = findNavController().navigate(directions)
@@ -39,10 +53,12 @@ fun Fragment.navTo(@IdRes dest: Int, args: Bundle) = findNavController().navigat
 fun Fragment.navBack() = findNavController().navigateUp()
 
 /** EXIBE UMA MENSAGEM SIMPLES TEMPORARIZADA NA TELA DO CELULAR */
-fun Fragment.showToast(msg: String) = Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+fun Fragment.showToast(msg: String) =
+    Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
 
 /** EXIBE UMA MENSAGEM SIMPLES TEMPORARIZADA POREM RETANGULAR. TAMBÉM PODE DAR A OPCÃO DE ADICIONAR ACÕES */
-fun Fragment.showSnake(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show()
+fun Fragment.showSnake(view: View, msg: String) =
+    Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show()
 
 /** DISPARA UMA ACTIVITY PARTINDO DE UM FRAGMENT */
 fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bundle()) {
@@ -98,7 +114,8 @@ fun Fragment.showKeyboard(view: View? = activity?.currentFocus) {
     }
 }
 
-fun Fragment.inputMethodManager() = context?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
+fun Fragment.inputMethodManager() =
+    context?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
 
 /** FAZ COM QUE O APARELHO VIBRE PELO TEMPO DEFINIDO: https://youtu.be/ogxgiaCq_24  */
 @Suppress("DEPRECATION")
@@ -106,7 +123,8 @@ fun Fragment.vibrate(duration: Long = 100) {
     val vibrator = requireContext().getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
     when {
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val vm = requireContext().getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+            val vm =
+                requireContext().getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
             vm.defaultVibrator.vibrate(
                 VibrationEffect.createOneShot(
                     duration,
@@ -412,10 +430,15 @@ fun Fragment.setTranslucentWindow(translucent: Boolean) {
 
 fun Fragment.hideTopActionBar() = activity?.let { (it as AppCompatActivity).hideActionBar() }
 fun Fragment.showTopActionBar() = activity?.let { (it as AppCompatActivity).showActionBar() }
-fun Fragment.setActionBarTitle(@StringRes title:Int) = activity?.let { (it as AppCompatActivity).setActionBarTitle(title) }
-fun Fragment.setActionBarIcon(@DrawableRes icon:Int) = activity?.let { (it as AppCompatActivity).setActionBarIcon(icon)}
+fun Fragment.setActionBarTitle(@StringRes title: Int) =
+    activity?.let { (it as AppCompatActivity).setActionBarTitle(title) }
+
+fun Fragment.setActionBarIcon(@DrawableRes icon: Int) =
+    activity?.let { (it as AppCompatActivity).setActionBarIcon(icon) }
+
 //fun Fragment.setToolBarIcon(@DrawableRes icon:Int) =  activity?.let { (it as AppCompatActivity).setToolbarNavigationIcon(icon) }
-fun Fragment.setToolBarTitle(title: String) = activity?.let { (it as AppCompatActivity).setToolbarNavigationTitle(title) }
+fun Fragment.setToolBarTitle(title: String) =
+    activity?.let { (it as AppCompatActivity).setToolbarNavigationTitle(title) }
 
 fun openUrl(activity: Activity, url: String) {
     activity.startActivity(Intent(ACTION_VIEW, Uri.parse(url)))
@@ -455,7 +478,7 @@ fun <T : AppCompatActivity> Fragment.navigateToNavGraph(
 }
 
 
-fun Fragment.startFurtaCorAnim(view: TextView, fromColor:Int, toColor:Int){
+fun Fragment.startFurtaCorAnim(view: TextView, fromColor: Int, toColor: Int) {
     val furtaCorAnim: ValueAnimator = ObjectAnimator.ofInt(
         view,
         "textColor",

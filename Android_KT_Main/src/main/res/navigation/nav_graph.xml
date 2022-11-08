@@ -71,6 +71,9 @@
         <action
             android:id="@+id/action_dcaHomeFragment_to_dcaKeyboardVibrationFragment"
             app:destination="@id/dcaKeyboardVibrationFragment" />
+        <action
+            android:id="@+id/action_dcaHomeFragment_to_dcaObligationFragment"
+            app:destination="@id/dcaObligationFragment" />
     </fragment>
 
     <fragment
@@ -113,6 +116,15 @@
         tools:layout="@layout/fragment_dca_keyboard_vibration" >
         <action
             android:id="@+id/action_dcaKeyboardVibrationFragment_to_dcaHomeFragment"
+            app:destination="@id/dcaHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dcaObligationFragment"
+        android:name="com.gouveia.android_main.dca.obligation.DcaObligationFragment"
+        android:label="fragment_dca_obligation"
+        tools:layout="@layout/fragment_dca_obligation" >
+        <action
+            android:id="@+id/action_dcaObligationFragment_to_dcaHomeFragment"
             app:destination="@id/dcaHomeFragment" />
     </fragment>
 
