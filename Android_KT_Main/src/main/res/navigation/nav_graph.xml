@@ -74,6 +74,9 @@
         <action
             android:id="@+id/action_dcaHomeFragment_to_dcaObfuscationFragment"
             app:destination="@id/dcaObfuscationFragment" />
+        <action
+            android:id="@+id/action_dcaHomeFragment_to_dcaWebViewDarModeFragment"
+            app:destination="@id/dcaWebViewDarModeFragment" />
     </fragment>
 
     <fragment
@@ -126,6 +129,16 @@
         tools:layout="@layout/fragment_dca_obfuscation" >
         <action
             android:id="@+id/action_dcaObfuscationFragment_to_dcaHomeFragment"
+            app:destination="@id/dcaHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dcaWebViewDarModeFragment"
+        android:name="com.gouveia.android_main.dca.web_view_dark_mode.DcaWebViewDarModeFragment"
+        android:label="fragment_dca_web_view_dar_mode"
+        tools:layout="@layout/fragment_dca_web_view_dar_mode" >
+        <action
+            android:id="@+id/action_dcaWebViewDarModeFragment_to_dcaHomeFragment"
             app:destination="@id/dcaHomeFragment" />
     </fragment>
 

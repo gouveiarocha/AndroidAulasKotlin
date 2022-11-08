@@ -1,8 +1,6 @@
 package com.gouveia.android_main.dca
 
-import android.content.Context
 import android.os.Bundle
-import android.os.Vibrator
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.gouveia.android_main.R
@@ -40,6 +38,9 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
 
             //COMO CRIAR / GRAVAR VIDEOS DO ANDROID STUDIO: https://youtu.be/1vB46ujfVrA
             dcaCreateVideo.setOnClickListener { showYoutubeVideo("1vB46ujfVrA") }
+
+            //COMO FORCAR DARK MODE NA WEB VIEW: https://youtu.be/aMuHOlTNL9E
+            dcaWebViewDarkMode.setOnClickListener { navTo(R.id.dcaWebViewDarModeFragment) }
 
         }
 
