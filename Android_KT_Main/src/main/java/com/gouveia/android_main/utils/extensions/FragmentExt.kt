@@ -10,6 +10,9 @@ import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET
+import android.net.NetworkCapabilities.NET_CAPABILITY_VALIDATED
 import android.net.Uri
 import android.os.*
 import android.provider.Settings
@@ -144,24 +147,23 @@ fun Fragment.vibrate(duration: Long = 100) {
     }
 }
 
-///** VERIFICA SE TEM REDE E SE TEM ACESSO A INTERNET: https://youtu.be/DpyxLwibE0M  */
-//fun Fragment.hasInternet(): Boolean {
-//    val connMgr =
-//        requireContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-//    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-//        val capabilities = connMgr.getNetworkCapabilities(connMgr.activeNetwork)
-//        capabilities != null &&
-//                // verifica se você tem rede ex: WIFI etc.
-//                capabilities.hasCapability(NET_CAPABILITY_INTERNET) &&
-//                // e realmetne consegue fazer requisições, pois em alguns casos
-//                // ex. aeroporto vc esta conectado, porem ainda não foi liberado
-//                // e por isso não tem rede
-//                capabilities.hasCapability(NET_CAPABILITY_VALIDATED)
-//    } else {
-//        @Suppress("DEPRECATION")
-//        connMgr.activeNetworkInfo?.isConnected == true
-//    }
-//}
+/** VERIFICA SE TEM REDE E SE TEM ACESSO A INTERNET: https://youtu.be/DpyxLwibE0M  */
+fun Fragment.hasInternet(): Boolean {
+    val connMgr = requireContext().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        val capabilities = connMgr.getNetworkCapabilities(connMgr.activeNetwork)
+        capabilities != null &&
+                // verifica se você tem rede ex: WIFI etc.
+                capabilities.hasCapability(NET_CAPABILITY_INTERNET) &&
+                // e realmetne consegue fazer requisições, pois em alguns casos
+                // ex. aeroporto vc esta conectado, porem ainda não foi liberado
+                // e por isso não tem rede
+                capabilities.hasCapability(NET_CAPABILITY_VALIDATED)
+    } else {
+        @Suppress("DEPRECATION")
+        connMgr.activeNetworkInfo?.isConnected == true
+    }
+}
 
 ///** EXIBE UM LEITOR DE BIOMETRIA: XXXXXXX */
 //fun Fragment.promptBiometricChecker(

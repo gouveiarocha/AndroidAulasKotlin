@@ -5,7 +5,9 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.gouveia.android_main.R
 import com.gouveia.android_main.databinding.FragmentDcaHomeBinding
+import com.gouveia.android_main.utils.extensions.hasInternet
 import com.gouveia.android_main.utils.extensions.navTo
+import com.gouveia.android_main.utils.extensions.showToast
 
 class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
 
@@ -19,6 +21,7 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
         binding.dcaRequestResult.setOnClickListener { navTo(R.id.dcaRequestResultFragment) }
         binding.dcaKeyboardVibration.setOnClickListener { navTo(R.id.dcaKeyboardVibrationFragment) }
         binding.dcaObfuscation.setOnClickListener { navTo(R.id.dcaObfuscationFragment) }
+        binding.dcaHasInternet.setOnClickListener { showToast(if (hasInternet()) "YES :)" else "NO :(") }
 
     }
 
