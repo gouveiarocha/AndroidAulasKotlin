@@ -56,12 +56,10 @@ fun Fragment.navTo(@IdRes dest: Int, args: Bundle) = findNavController().navigat
 fun Fragment.navBack() = findNavController().navigateUp()
 
 /** EXIBE UMA MENSAGEM SIMPLES TEMPORARIZADA NA TELA DO CELULAR */
-fun Fragment.showToast(msg: String) =
-    Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+fun Fragment.showToast(msg: String) = Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
 
 /** EXIBE UMA MENSAGEM SIMPLES TEMPORARIZADA POREM RETANGULAR. TAMBÉM PODE DAR A OPCÃO DE ADICIONAR ACÕES */
-fun Fragment.showSnake(view: View, msg: String) =
-    Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show()
+fun Fragment.showSnake(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.LENGTH_SHORT).show()
 
 /** DISPARA UMA ACTIVITY PARTINDO DE UM FRAGMENT */
 fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bundle()) {
@@ -73,6 +71,7 @@ fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bu
     requireActivity().startActivity(intent)
 }
 
+/** NAVEGAR PARA EXIBIÇÃO DE VIDEO NO YOUTUBE */
 fun Fragment.showYoutubeVideo(videoId: String) {
     val openURL = Intent(Intent.ACTION_VIEW)
     openURL.data = Uri.parse("https://youtu.be/$videoId")
@@ -117,9 +116,6 @@ fun Fragment.showKeyboard(view: View? = activity?.currentFocus) {
     }
 }
 
-fun Fragment.inputMethodManager() =
-    context?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
-
 /** FAZ COM QUE O APARELHO VIBRE PELO TEMPO DEFINIDO: https://youtu.be/ogxgiaCq_24  */
 @Suppress("DEPRECATION")
 fun Fragment.vibrate(duration: Long = 100) {
@@ -153,7 +149,7 @@ fun Fragment.hasInternet(): Boolean {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         val capabilities = connMgr.getNetworkCapabilities(connMgr.activeNetwork)
         capabilities != null &&
-                // verifica se você tem rede ex: WIFI etc.
+                // verifica se você tem rede ex: WIFI, etc.
                 capabilities.hasCapability(NET_CAPABILITY_INTERNET) &&
                 // e realmetne consegue fazer requisições, pois em alguns casos
                 // ex. aeroporto vc esta conectado, porem ainda não foi liberado
@@ -520,3 +516,6 @@ fun Fragment.showDialog(
     .setOnCancelListener { cancelListener() }
     .create()
     .also { it.show() }
+
+// GETS
+fun Fragment.inputMethodManager() = context?.getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager

@@ -36,10 +36,10 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
             //COMO VERIFICAR CONEXÃO COM INTERNET: https://youtu.be/DpyxLwibE0M
             dcaHasInternet.setOnClickListener { showToast(if (hasInternet()) "YES :)" else "NO :(") }
 
-            //COMO CRIAR / GRAVAR VIDEOS DO ANDROID STUDIO: https://youtu.be/1vB46ujfVrA
+            //COMO CRIAR E GRAVAR VIDEOS COM ANDROID STUDIO: https://youtu.be/1vB46ujfVrA
             dcaCreateVideo.setOnClickListener { showYoutubeVideo("1vB46ujfVrA") }
 
-            //COMO FORCAR DARK MODE NA WEB VIEW: https://youtu.be/aMuHOlTNL9E
+            //COMO FORÇAR DARK MODE NA WEB VIEW: https://youtu.be/aMuHOlTNL9E
             dcaWebViewDarkMode.setOnClickListener { navTo(R.id.dcaWebViewDarModeFragment) }
 
             //COMO CRIAR ÍCONES ADAPTÁVEIS E LEGACY: https://youtu.be/FNQ3DQSVd30
