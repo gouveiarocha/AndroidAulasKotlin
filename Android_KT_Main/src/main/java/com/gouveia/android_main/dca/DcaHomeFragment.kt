@@ -42,6 +42,9 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
             //COMO FORCAR DARK MODE NA WEB VIEW: https://youtu.be/aMuHOlTNL9E
             dcaWebViewDarkMode.setOnClickListener { navTo(R.id.dcaWebViewDarModeFragment) }
 
+            //COMO CRIAR ÍCONES ADAPTÁVEIS E LEGACY: https://youtu.be/FNQ3DQSVd30
+            dcaAdaptiveIcons.setOnClickListener { showYoutubeVideo("FNQ3DQSVd30") }
+
         }
 
     }
