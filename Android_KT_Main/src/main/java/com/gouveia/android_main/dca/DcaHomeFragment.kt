@@ -8,6 +8,7 @@ import com.gouveia.android_main.databinding.FragmentDcaHomeBinding
 import com.gouveia.android_main.utils.extensions.hasInternet
 import com.gouveia.android_main.utils.extensions.navTo
 import com.gouveia.android_main.utils.extensions.showToast
+import com.gouveia.android_main.utils.extensions.vibrate
 
 class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
 
@@ -17,11 +18,27 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDcaHomeBinding.bind(view)
 
-        binding.dcaRequestPermission.setOnClickListener { navTo(R.id.dcaRequestPermissionFragment) }
-        binding.dcaRequestResult.setOnClickListener { navTo(R.id.dcaRequestResultFragment) }
-        binding.dcaKeyboardVibration.setOnClickListener { navTo(R.id.dcaKeyboardVibrationFragment) }
-        binding.dcaObfuscation.setOnClickListener { navTo(R.id.dcaObfuscationFragment) }
-        binding.dcaHasInternet.setOnClickListener { showToast(if (hasInternet()) "YES :)" else "NO :(") }
+        with(binding) {
+
+            //SOLICITAR PERMISSÕES COM API NOVA DA GOOGLE: https://youtu.be/grYUKZDTzVA
+            dcaRequestPermission.setOnClickListener { navTo(R.id.dcaRequestPermissionFragment) }
+
+            //LANCAR ACTIVITY, FRAGMENTS E OBTER RESULTADO: https://youtu.be/mhm096S_qrA
+            dcaRequestResult.setOnClickListener { navTo(R.id.dcaRequestResultFragment) }
+
+            //ESCONDER TECLADO: https://youtu.be/OzK1fJi9FiQ
+            //VIBRAR CELULAR: https://youtu.be/ogxgiaCq_24
+            dcaKeyboardVibration.setOnClickListener { navTo(R.id.dcaKeyboardVibrationFragment) }
+
+            //COMO BLOQUEAR / IMPEDIR CAPTURAS DE TELAS: https://youtu.be/7zUdUYiu8Rs
+            dcaObfuscation.setOnClickListener { navTo(R.id.dcaObfuscationFragment) }
+
+            //COMO VERIFICAR CONEXÃO COM INTERNET: https://youtu.be/DpyxLwibE0M
+            dcaHasInternet.setOnClickListener { showToast(if (hasInternet()) "YES :)" else "NO :(") }
+
+
+
+        }
 
     }
 

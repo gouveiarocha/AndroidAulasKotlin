@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.gouveia.android_main.R
 import com.gouveia.android_main.utils.extensions.setObfuscation
+import com.gouveia.android_main.utils.extensions.showYoutubeVideo
 
 class DcaObfuscationFragment : Fragment(R.layout.fragment_dca_obfuscation) {
 

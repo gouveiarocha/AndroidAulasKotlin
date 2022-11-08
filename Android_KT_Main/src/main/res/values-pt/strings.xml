@@ -7,14 +7,7 @@
 
     <!--- Explicações -->
 
-    <string name="explanation_keyboard_vibration">
-        Essa aula não possui implementação de interação
-        no App, apenas explicação para os métodos das classes de extenção. Fica como sugestão fazer
-        implementação própria - Fica a sugestão de criar 3 botões, em cada um deles controlar cada
-        ação: Exibir Teclado, Esconder Teclado e Vibrar.
-    </string>
-
-    <string name="explanation_obligation">
+    <string name="explanation_obfuscation">
         A aula original não possui implementação de interação no App, apenas explicação para os
         métodos da classe de extenção, onde a ofuscação é feita na activity e consequentemente em
         todas telas relacionadas, inclusive os fragments. Então, mantivemos a implementação
