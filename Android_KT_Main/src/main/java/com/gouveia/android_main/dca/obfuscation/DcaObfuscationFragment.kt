@@ -1,4 +1,4 @@
-package com.gouveia.android_main.dca.obligation
+package com.gouveia.android_main.dca.obfuscation
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.gouveia.android_main.R
 import com.gouveia.android_main.utils.extensions.setObfuscation
 
-class DcaObligationFragment : Fragment(R.layout.fragment_dca_obligation) {
+class DcaObfuscationFragment : Fragment(R.layout.fragment_dca_obfuscation) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
