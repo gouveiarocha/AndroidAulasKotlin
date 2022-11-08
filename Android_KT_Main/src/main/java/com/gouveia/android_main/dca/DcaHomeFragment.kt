@@ -45,6 +45,9 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
             //COMO CRIAR ÍCONES ADAPTÁVEIS E LEGACY: https://youtu.be/FNQ3DQSVd30
             dcaAdaptiveIcons.setOnClickListener { showYoutubeVideo("FNQ3DQSVd30") }
 
+            //COMO VISUALIZAR ERROS COM TIMBER EM PRODUCÃO: https://youtu.be/rz8O8V4Ho1M
+            dcaTimber.setOnClickListener { showYoutubeVideo("rz8O8V4Ho1M") }
+
         }
 
     }
