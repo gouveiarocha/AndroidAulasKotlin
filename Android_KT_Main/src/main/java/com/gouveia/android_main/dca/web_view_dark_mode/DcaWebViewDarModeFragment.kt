@@ -12,6 +12,10 @@ import androidx.webkit.WebViewFeature
 import com.gouveia.android_main.R
 import com.gouveia.android_main.databinding.FragmentDcaWebViewDarModeBinding
 
+// 1) ADICIONAR DEPENDÊNCIA NO build.gradle
+// 2) CERTIFIQUE-SE QUE SEU APP TEM UM "Theme" QUE EXTENDE "DayNight"
+// 3) USE A FEATURE FORCE-DARK PARA DEIXAR SUA WEBVIEW DARK TAMBEM
+
 // REF DOCUMENTAÇÃO
 // https://developer.android.com/reference/androidx/webkit/package-summary
 
