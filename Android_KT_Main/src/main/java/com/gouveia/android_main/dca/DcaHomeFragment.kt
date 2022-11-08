@@ -1,6 +1,8 @@
 package com.gouveia.android_main.dca
 
+import android.content.Context
 import android.os.Bundle
+import android.os.Vibrator
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.gouveia.android_main.R
@@ -8,7 +10,7 @@ import com.gouveia.android_main.databinding.FragmentDcaHomeBinding
 import com.gouveia.android_main.utils.extensions.hasInternet
 import com.gouveia.android_main.utils.extensions.navTo
 import com.gouveia.android_main.utils.extensions.showToast
-import com.gouveia.android_main.utils.extensions.vibrate
+import com.gouveia.android_main.utils.extensions.showYoutubeVideo
 
 class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
 
@@ -36,7 +38,8 @@ class DcaHomeFragment : Fragment(R.layout.fragment_dca_home) {
             //COMO VERIFICAR CONEXÃO COM INTERNET: https://youtu.be/DpyxLwibE0M
             dcaHasInternet.setOnClickListener { showToast(if (hasInternet()) "YES :)" else "NO :(") }
 
-
+            //COMO CRIAR / GRAVAR VIDEOS DO ANDROID STUDIO: https://youtu.be/1vB46ujfVrA
+            dcaCreateVideo.setOnClickListener { showYoutubeVideo("1vB46ujfVrA") }
 
         }
 
